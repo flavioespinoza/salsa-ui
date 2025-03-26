@@ -159,7 +159,7 @@ module.exports = {
 ## 📚 Documentation
 
 📖 Full documentation and usage examples:  
-➡️ [https://salsanetwork.github.io/salsa-ui](https://salsanetwork.github.io/salsa-ui)
+➡️ [https://flavioespinoza.github.io/salsa-ui](https://flavioespinoza.github.io/salsa-ui)
 
 ---
 

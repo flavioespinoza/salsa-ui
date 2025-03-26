@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { ReactNode } from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	children: React.ReactNode
-	className?: string
+	children: ReactNode;
+	className?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({ children, className = '', ...props }) => {
@@ -13,5 +13,5 @@ export const Button: React.FC<ButtonProps> = ({ children, className = '', ...pro
 			...props
 		},
 		children
-	)
-}
+	);
+};

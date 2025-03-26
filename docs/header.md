@@ -5,7 +5,7 @@ Top navigation bar component.
 ## Usage
 
 ```tsx
-import { Header } from '@blessnetwork/bless-ui'
+import { Header } from '@flavioespinoza/salsa-ui'
 
 <Header />
 ```
