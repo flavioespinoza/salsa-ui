@@ -1,6 +1,6 @@
 {
 	"name": "@flavioespinoza/salsa-ui",
-	"version": "1.0.11",
+	"version": "1.0.12",
 	"type": "module",
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
@@ -8,14 +8,14 @@
 	"files": [
 		"dist"
 	],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/flavioespinoza/salsa-ui.git"
-  },
-  "homepage": "https://github.com/flavioespinoza/salsa-ui#readme",
-  "bugs": {
-    "url": "https://github.com/flavioespinoza/salsa-ui/issues"
-  },
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/flavioespinoza/salsa-ui.git"
+	},
+	"homepage": "https://github.com/flavioespinoza/salsa-ui#readme",
+	"bugs": {
+		"url": "https://github.com/flavioespinoza/salsa-ui/issues"
+	},
 	"scripts": {
 		"dev": "next dev",
 		"build": "tsup src/index.ts --dts --format esm,cjs --target esnext --out-dir dist",
