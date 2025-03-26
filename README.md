@@ -190,7 +190,9 @@ npm version patch
 
 git push && git push --tags
 
-npm publish --access public --otp=<six-digit-code-from-your-2FA-authenticator-app>
+# npm publish --access public --otp=<six-digit-code-from-your-2FA-authenticator-app>
+
+npm publish --access public --otp=
 ```
 
 ---
