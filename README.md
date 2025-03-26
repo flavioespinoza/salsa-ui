@@ -19,6 +19,13 @@ It includes:
 
 ---
 
+## 📚 Documentation
+
+📖 Full documentation and usage examples:  
+➡️ [https://flavioespinoza.github.io/salsa-ui](https://flavioespinoza.github.io/salsa-ui)
+
+---
+
 ## ▶️ Run Locally
 
 Install dependencies:
@@ -152,13 +159,6 @@ module.exports = {
 	plugins: []
 }
 ```
-
----
-
-## 📚 Documentation
-
-📖 Full documentation and usage examples:  
-➡️ [https://flavioespinoza.github.io/salsa-ui](https://flavioespinoza.github.io/salsa-ui)
 
 ---
 
