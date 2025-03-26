@@ -17,3 +17,12 @@ import { Button } from '@flavioespinoza/salsa-ui'
 
 <Button className="bg-blue-600 text-white">Click Me</Button>
 ```
+
+Variants
+
+```tsx
+import { Button } from '@flavioespinoza/salsa-ui'
+
+<Button variant="outline" className="bg-blue-600 text-white">Click Me</Button>
+```
+
