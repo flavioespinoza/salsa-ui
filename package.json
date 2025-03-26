@@ -8,6 +8,7 @@
 	"files": [
 		"dist"
 	],
+	"repository": "https://github.com/flavioespinoza/salsa-ui.git",
 	"scripts": {
 		"dev": "next dev",
 		"build": "tsup src/index.ts --dts --format esm,cjs --target esnext --out-dir dist",
