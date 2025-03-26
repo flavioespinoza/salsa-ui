@@ -60,7 +60,7 @@ import { menuItems, menuItemsFooter } from '@/constants/menu-items'
 
 **`src/components/main-layout.tsx`**
 
-```tsx
+```ts
 'use client'
 
 import React from 'react'
@@ -86,7 +86,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 			<div
 				id="mainLayoutContent"
 				className="flex flex-1 flex-col transition-all duration-300"
-				style={{ width: `calc(100% - ${width}px)` }}
 			>
 				<Header height={HEADER_HEIGHT} />
 				<main className="flex-1 p-4">{children}</main>
