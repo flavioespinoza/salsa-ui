@@ -181,8 +181,16 @@ Publishing is automated via GitHub Actions when the `main` branch is updated.
 To publish manually:
 
 ```bash
+# Patch bump (1.0.8 → 1.0.9)
 npm version patch
-git push --follow-tags
+
+# Or use:
+# npm version minor   # 1.1.0
+# npm version major   # 2.0.0
+
+git push && git push --tags
+
+npm publish --access public --otp=<six-digit-code-from-your-2FA-authenticator-app>
 ```
 
 ---
@@ -190,3 +198,37 @@ git push --follow-tags
 ## 🔒 License
 
 MIT © [Flavio Espinoza](https://flavioespinoza.com)
+
+
+## Todo
+
+✅ Great — the package is live.
+
+However, **you cannot disable 2FA completely** if you're using an NPM account with 2FA enforced. But you can **bypass the OTP requirement for CI/CD** by using a special type of token:
+
+---
+
+### ✅ Use an **Automation Token** (no OTP required)
+
+This lets GitHub Actions publish **without** asking for OTP.
+
+#### 1. Go to:
+🔗 https://www.npmjs.com/settings/<your-username>/tokens
+
+#### 2. Click **"Generate New Token"**
+- Choose type: **Automation**
+- Scope: `@flavioespinoza`
+- Description: `GitHub Actions for salsa-ui`
+- ✅ This token does **not** require OTP
+
+#### 3. Save it as a GitHub Secret
+- Go to GitHub → Repo → **Settings → Secrets and variables → Actions**
+- Add new secret:
+  - **Name**: `NPM_TOKEN`
+  - **Value**: *(paste the automation token)*
+
+---
+
+No `.npmrc` needed — your CI is now 2FA-free.
+
+Let me know when it's saved — we’ll push an empty commit to confirm it works.
