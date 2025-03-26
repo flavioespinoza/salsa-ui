@@ -9,7 +9,9 @@ const config: Config = {
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/**/*.{js,ts,jsx,tsx}'
 	],
-	extract,
+	extract: {
+		include: ['src/**/*.{js,ts,jsx,tsx,mdx}'], // Ensure Fluid extractor is properly set
+	},
 	darkMode: ['class'],
 	theme: {
 		screens, // Fluid Tailwind's default screens, in `rem`

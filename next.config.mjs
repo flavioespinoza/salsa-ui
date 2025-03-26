@@ -6,10 +6,7 @@ const nextConfig = {
 		styledComponents: true
 	},
 	experimental: {
-		forceSwcTransforms: true,
-		babelLoaderOptions: {
-			// Your custom Babel options here
-		}
+		forceSwcTransforms: true
 	}
 }
 

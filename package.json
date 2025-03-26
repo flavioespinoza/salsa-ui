@@ -10,14 +10,11 @@
 	],
 	"scripts": {
 		"dev": "next dev",
-		"build": "tsc",
+		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
 		"clean": "prettier --write .",
-		"build:lib": "tsup",
-		"prepublishOnly": "yarn build:lib",
-		"tree": "zsh -i -c tree_me",
-		"prepare": "yarn build"
+		"tree": "zsh -i -c tree_me"
 	},
 	"dependencies": {
 		"@gem-mine/docsify-react-live": "^1.7.1",
@@ -59,7 +56,6 @@
 		"tailwindcss": "^3.4.17",
 		"tailwindcss-animate": "^1.0.7",
 		"tslib": "^2.8.1",
-		"tsup": "^8.4.0",
 		"typescript": "^5.8.2",
 		"yarn": "^1.22.22"
 	},
