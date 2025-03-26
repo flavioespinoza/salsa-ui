@@ -1,0 +1,10 @@
+src/app
+src/constants
+src/hooks
+src/state
+src/styles
+src/lib
+docs
+public
+.next
+node_modules
