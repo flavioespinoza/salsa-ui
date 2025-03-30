@@ -5,7 +5,7 @@ interface ButtonFluidProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
 	className?: string
 }
 
-const ButtonFluid: React.FC<ButtonFluidProps> = ({ children, className = '', ...props }) => {
+export const ButtonFluid: React.FC<ButtonFluidProps> = ({ children, className = '', ...props }) => {
 	return React.createElement(
 		'button',
 		{
@@ -15,5 +15,3 @@ const ButtonFluid: React.FC<ButtonFluidProps> = ({ children, className = '', ...
 		children
 	)
 }
-
-export { ButtonFluid }
