@@ -9,6 +9,7 @@ export * from './components/ui/header-mobile'
 export * from './components/ui/popover'
 export * from './components/ui/icons'
 export * from './components/ui/side-nav'
+export * from './components/ui/textarea'
 export * from './components/ui/toast'
 export * from './components/ui/toaster'
 
