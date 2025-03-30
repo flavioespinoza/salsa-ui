@@ -1,14 +1,14 @@
 import { create } from 'zustand'
 
-interface SidenavState {
+interface SideNavState {
 	device: 'mobile' | 'tablet' | 'desktop'
 	isExpanded: boolean
 	width: number
 	setDevice: (device: 'mobile' | 'tablet' | 'desktop') => void
-	toggleSidenav: () => void
+	toggleSideNav: () => void
 }
 
-export const useSidenavStore = create<SidenavState>((set) => ({
+export const useSideNavStore = create<SideNavState>((set) => ({
 	device: 'desktop',
 	isExpanded: true,
 	width: 260,
@@ -19,18 +19,18 @@ export const useSidenavStore = create<SidenavState>((set) => ({
 			isExpanded: device === 'desktop',
 			width: device === 'mobile' ? 0 : device === 'tablet' ? 72 : 260
 		}
-		console.log('📢 Updated Sidenav State:', newState)
+		console.log('📢 Updated SideNav State:', newState)
 		set(newState)
 	},
 
-	toggleSidenav: () => {
+	toggleSideNav: () => {
 		set((state) => {
 			const newState = {
 				...state,
 				isExpanded: !state.isExpanded,
 				width: state.isExpanded ? (state.device === 'mobile' ? 0 : 72) : 260
 			}
-			console.log('📢 Toggled Sidenav State:', newState)
+			console.log('📢 Toggled SideNav State:', newState)
 			return newState
 		})
 	}

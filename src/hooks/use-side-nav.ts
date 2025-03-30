@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { useSidenavStore } from '@/state/useSidenavStore'
+import { useSideNavStore } from '@/state/use-side-nav-store'
 
-const useSidenav = () => {
-	const { setDevice } = useSidenavStore()
+export const useSideNav = () => {
+	const { setDevice } = useSideNavStore()
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -22,5 +22,3 @@ const useSidenav = () => {
 		return () => window.removeEventListener('resize', handleResize)
 	}, [setDevice])
 }
-
-export default useSidenav
