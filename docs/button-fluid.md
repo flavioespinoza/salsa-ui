@@ -1,6 +1,6 @@
 # ButtonFluid
 
-A reusable button component with a fluid, rounded style and support for custom classes and full accessibility.
+A reusable button component built with Fluid-Tailwind – an npm module that dynamically generates fluid (responsive) CSS values using Tailwind’s utility classes. When applied to a component, it automatically creates clamp() CSS functions for smooth scaling between breakpoints.
 
 ## Props
 
@@ -15,13 +15,7 @@ A reusable button component with a fluid, rounded style and support for custom c
 ```tsx
 import { ButtonFluid } from '@flavioespinoza/salsa-ui'
 
-<ButtonFluid className="bg-blue-600 text-white">Click Me</ButtonFluid>
-```
+const handleClick = () => alert('Button Clicked!')
 
-Variants
-
-```tsx
-import { ButtonFluid } from '@flavioespinoza/salsa-ui'
-
-<ButtonFluid className="bg-green-500 text-white">Click Me</ButtonFluid>
+<ButtonFluid className="bg-green-500 text-white" onClick={handleClick}>Click Me</ButtonFluid>
 ```

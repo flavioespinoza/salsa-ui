@@ -16,4 +16,4 @@ const ButtonFluid: React.FC<ButtonFluidProps> = ({ children, className = '', ...
 	)
 }
 
-export default ButtonFluid
+export { ButtonFluid }

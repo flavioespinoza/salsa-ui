@@ -24,19 +24,19 @@ feat(button): add loading state support
 
 ### 🔠 Types
 
-| Type       | Description                                           |
-|------------|-------------------------------------------------------|
-| feat       | A new feature                                         |
-| fix        | A bug fix                                             |
-| docs       | Documentation-only changes                            |
-| style      | Code formatting, whitespace, etc. (no logic changes) |
-| refactor   | Code improvements that don't change behavior         |
-| perf       | Performance improvements                              |
-| test       | Adding or updating tests                              |
-| chore      | Build tasks, CI config, dependency updates            |
-| revert     | Revert a previous commit                              |
-| build      | Build system or tooling changes                       |
-| ci         | CI configuration updates                              |
+| Type     | Description                                          |
+| -------- | ---------------------------------------------------- |
+| feat     | A new feature                                        |
+| fix      | A bug fix                                            |
+| docs     | Documentation-only changes                           |
+| style    | Code formatting, whitespace, etc. (no logic changes) |
+| refactor | Code improvements that don't change behavior         |
+| perf     | Performance improvements                             |
+| test     | Adding or updating tests                             |
+| chore    | Build tasks, CI config, dependency updates           |
+| revert   | Revert a previous commit                             |
+| build    | Build system or tooling changes                      |
+| ci       | CI configuration updates                             |
 
 ---
 
