@@ -75,7 +75,7 @@ import { Header } from '@/components/ui/header'
 import SideNav from '@/components/ui/side-nav'
 import { menuItems, menuItemsFooter } from '@/constants/menu-items'
 import useSidenav from '@/hooks/useSidenav'
-import { useSidenavStore } from '@/state/useSidenavStore'
+import { useSideNavStore } from '@/state/use-side-nav-store'
 
 const HEADER_HEIGHT = 'h-[74px]'
 
@@ -85,7 +85,7 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 	useSidenav()
-	const { width } = useSidenavStore()
+	const { width } = useSideNavStore()
 
 	return (
 		<div id="mainLayoutWrapper" className="flex min-h-screen w-full">

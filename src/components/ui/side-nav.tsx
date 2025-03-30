@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LogoIcon, MenuIcon } from '@/components/ui/icons'
-import { useSidenavStore } from '@/state/useSidenavStore'
+import { useSideNavStore } from '@/state/use-side-nav-store'
 
 interface MenuItem {
 	label: string
@@ -18,7 +18,7 @@ interface SideNavProps {
 const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 	const pathname = usePathname()
 	const [activePath, setActivePath] = useState<string>(pathname)
-	const { isExpanded, width, toggleSidenav } = useSidenavStore()
+	const { isExpanded, width, toggleSideNav } = useSideNavStore()
 
 	useEffect(() => {
 		setActivePath(pathname)
@@ -71,7 +71,7 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 				>
 					<LogoIcon className="h-8 w-8" />
 				</div>
-				<button onClick={toggleSidenav} className="ml-auto rounded p-1 transition-all duration-200">
+				<button onClick={toggleSideNav} className="ml-auto rounded p-1 transition-all duration-200">
 					<MenuIcon
 						className={`h-6 w-6 cursor-pointer text-[#A0A2A0] transition-transform duration-100 hover:text-black ${
 							isExpanded ? 'rotate-0' : 'rotate-180'
