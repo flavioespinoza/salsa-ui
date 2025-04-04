@@ -1,59 +1,38 @@
 # Tooltip
 
-A flexible, composable tooltip system built on top of `@radix-ui/react-tooltip`. This version exposes each primitive — `Tooltip`, `TooltipTrigger`, `TooltipContent`, and `TooltipProvider` — allowing full control over layout and styling.
+A simple, client-side tooltip component built on top of `@radix-ui/react-tooltip`. This version provides a high-level abstraction that accepts content, children, and an optional delay.
 
 ## Usage
 
 ```tsx
 'use client'
 
-import {
-	Tooltip,
-	TooltipTrigger,
-	TooltipContent,
-	TooltipProvider
-} from '@flavioespinoza/salsa-ui'
+import { Tooltip } from '@flavioespinoza/salsa-ui'
 
-<TooltipProvider>
-	<Tooltip>
-		<TooltipTrigger asChild>
-			<button className="px-4 py-2 bg-blue-500 text-white rounded">
-				Hover me
-			</button>
-		</TooltipTrigger>
-		<TooltipContent>
-			Advanced tooltip content
-		</TooltipContent>
-	</Tooltip>
-</TooltipProvider>
+<Tooltip content="Hello there!" delay={300}>
+	<button className="px-4 py-2 bg-blue-500 text-white rounded">
+		Hover me
+	</button>
+</Tooltip>
 ```
 
-## Exports
+## Props
 
-| Component         | Description                                                             |
-|------------------|-------------------------------------------------------------------------|
-| `TooltipProvider` | Context provider to wrap tooltips and set defaults like delay.         |
-| `Tooltip`          | Root wrapper for each tooltip instance.                               |
-| `TooltipTrigger`   | Element that activates the tooltip on hover/focus.                    |
-| `TooltipContent`   | The visible tooltip box. Accepts custom positioning and styling props. |
-
-## TooltipContent Props
-
-| Prop        | Type      | Default | Description                                                      |
-|-------------|-----------|---------|------------------------------------------------------------------|
-| `className` | `string` | –       | Custom classes to override styles.                              |
-| `sideOffset` | `number` | `4`     | Distance between the trigger and tooltip.                        |
-| ...props    | All other props from `@radix-ui/react-tooltip`'s `Content` component are supported. |
+| Name      | Type              | Default | Description                                                  |
+|-----------|-------------------|---------|--------------------------------------------------------------|
+| `children` | `React.ReactNode` | –       | The element that triggers the tooltip.                        |
+| `content`  | `string`          | –       | The tooltip text to display.                                  |
+| `delay`    | `number`          | `300`  | Delay in milliseconds before showing the tooltip on hover.    |
+| ...props   | `TooltipPrimitive.Content` props | – | Additional props forwarded to the `Content` component.       |
 
 ## Styles
 
-Tooltip content includes:
-- Animations on open/close
-- Smooth fade/zoom transitions
-- Customizable positioning via data attributes
-- Theme-based styling using Tailwind classes
+- Background: black
+- Text: white
+- Size: small, with padding and a subtle shadow
+- Arrow: points to trigger and matches the tooltip color
 
-You can extend or override styles using Tailwind and the `className` prop.
+Custom styles can be applied by extending the `className` prop via `...props`.
 
 ## Dependencies
 
