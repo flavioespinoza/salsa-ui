@@ -1,0 +1,31 @@
+<div class="markdown">
+	<p class="bg-red-400 mb-[2px] mt-[2px]">
+		<code class="rounded bg-black/5 px-1 text-[13px]">useMemo</code> and
+		<code class="rounded bg-black/5 px-1 text-[13px]">useCallback</code> are both hooks provided by
+		React to optimize performance by memoizing values or functions. Let's break down the differences
+		and when to use each:
+	</p>
+	<div class="bg-pink-200 mb-0 mt-2 text-base font-medium">useMemo</div>
+	<p class="bg-red-400 mb-[2px] mt-[2px]">
+		<strong>Purpose:</strong> <code class="rounded bg-black/5 px-1 text-[13px]">useMemo</code> is
+		used to memoize a computed value.
+	</p>
+	<p class="bg-red-400 mb-[2px] mt-[2px]"><strong>Syntax:</strong></p>
+	<pre
+		class="bg-orange my-2 overflow-x-auto rounded p-2"
+	><code class="hljs language-javascript"><span class="hljs-keyword">const</span> memoizedValue = <span class="hljs-title function_">useMemo</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">computeExpensiveValue</span>(a, b), [a, b]);
+  </code></pre>
+	<p class="bg-red-400 mb-[2px] mt-[2px]"><strong>When to Use:</strong></p>
+	<ul class="bg-limegreen my-[2px] list-disc pl-5">
+		<li class="bg-cornflowerblue my-[2px]">
+			<strong>Expensive Calculations:</strong> Use
+			<code class="rounded bg-black/5 px-1 text-[13px]">useMemo</code> when you have a calculation
+			that is computationally expensive and you want to avoid recalculating it on every render
+			unless its dependencies change.
+		</li>
+		<li class="bg-cornflowerblue my-[2px]">
+			<strong>Derived State:</strong> When deriving state from props or state that requires some
+			computation.
+		</li>
+	</ul>
+</div>
