@@ -3,7 +3,7 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 import { cn } from '@/lib/utils'
 
-export function Tooltip({
+export const Tooltip = ({
 	children,
 	content,
 	delay = 300,
@@ -12,7 +12,7 @@ export function Tooltip({
 	children: React.ReactNode
 	content: string
 	delay?: number
-}) {
+}) => {
 	return (
 		<TooltipPrimitive.Provider delayDuration={delay}>
 			<TooltipPrimitive.Root>
