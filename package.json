@@ -27,7 +27,7 @@
 	"dependencies": {
 		"@gem-mine/docsify-react-live": "^1.7.1",
 		"@highlightjs/cdn-assets": "^11.10.0",
-		"@radix-ui/react-slot": "^1.1.2",
+		"@radix-ui/react-tooltip": "^1.1.8",
 		"@stackblitz/sdk": "^1.11.0",
 		"@types/styled-components": "^5.1.34",
 		"class-variance-authority": "^0.7.0",
