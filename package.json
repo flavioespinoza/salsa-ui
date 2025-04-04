@@ -1,6 +1,6 @@
 {
 	"name": "@flavioespinoza/salsa-ui",
-	"version": "1.0.29",
+	"version": "1.0.30",
 	"type": "module",
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
