@@ -10,5 +10,6 @@
   - [Header](header.md)
   - [HeaderMobile](header-mobile.md)
   - [Input](input.md)
-  - [Popover](popover.md)
+  - [Textarea](textarea.md)
+  - [Tooltip](tooltip.md)
   - [Icons](icons.md)
