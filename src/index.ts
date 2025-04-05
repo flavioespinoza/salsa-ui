@@ -1,3 +1,6 @@
+// Styles
+import './styles/globals.css'
+
 // UI Components
 export * from './components/ui/button'
 export * from './components/ui/button-fluid'
