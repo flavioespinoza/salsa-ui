@@ -18,7 +18,7 @@
 	},
 	"scripts": {
 		"dev": "next dev",
-		"build": "tsup src/index.ts --dts --format esm,cjs --target esnext --out-dir dist && cp src/styles/globals.css dist/",
+		"build": "tsup src/index.ts --dts --format esm,cjs --target esnext --out-dir dist",
 		"start": "next start",
 		"lint": "next lint",
 		"clean": "prettier --write .",
