@@ -1,6 +1,6 @@
 {
 	"name": "@flavioespinoza/salsa-ui",
-	"version": "1.0.31",
+	"version": "1.0.32",
 	"type": "module",
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
@@ -27,6 +27,7 @@
 	"dependencies": {
 		"@gem-mine/docsify-react-live": "^1.7.1",
 		"@highlightjs/cdn-assets": "^11.10.0",
+		"@radix-ui/react-checkbox": "^1.1.4",
 		"@radix-ui/react-tooltip": "^1.1.8",
 		"@stackblitz/sdk": "^1.11.0",
 		"@types/styled-components": "^5.1.34",
