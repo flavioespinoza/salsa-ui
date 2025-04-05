@@ -7,6 +7,7 @@
   - [ButtonFluid](button-fluid.md)
   - [Card](card.md)
   - [CardSection](card-section.md)
+  - [Checkbox](checkbox.md)
   - [Header](header.md)
   - [HeaderMobile](header-mobile.md)
   - [Input](input.md)
