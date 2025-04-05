@@ -22,7 +22,7 @@
 		"start": "next start",
 		"lint": "next lint",
 		"clean": "prettier --write .",
-		"release": "npm version patch && yarn publish --access public --non-interactive"
+		"pub": "npm version patch && yarn publish --access public --non-interactive"
 	},
 	"dependencies": {
 		"@gem-mine/docsify-react-live": "^1.7.1",
