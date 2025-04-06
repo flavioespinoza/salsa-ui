@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { Header } from '@/components/ui/header'
-import SideNav from '@/components/ui/side-nav'
+import { SideNav } from '@/components/ui/side-nav'
+import { LogoIcon } from '@/components/ui/icons'
 import { menuItems, menuItemsFooter } from '@/constants/menu-items'
 import { useSideNav } from '@/hooks/use-side-nav'
 import { useSideNavStore } from '@/state/use-side-nav-store'
@@ -17,9 +18,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 	useSideNav()
 	const { width } = useSideNavStore()
 
+	console.log(width)
+
 	return (
 		<div id="mainLayoutWrapper" className="flex min-h-screen w-full">
-			<SideNav menuItems={menuItems} menuItemsFooter={menuItemsFooter} />
+			<SideNav menuItems={menuItems} menuItemsFooter={menuItemsFooter} logo={LogoIcon} />
 			<div
 				id="mainLayoutContent"
 				className="flex flex-1 flex-col transition-all duration-300"

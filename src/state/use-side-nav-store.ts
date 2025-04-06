@@ -19,7 +19,7 @@ export const useSideNavStore = create<SideNavState>((set) => ({
 			isExpanded: device === 'desktop',
 			width: device === 'mobile' ? 0 : device === 'tablet' ? 72 : 260
 		}
-		console.log('📢 Updated SideNav State:', newState)
+		// console.log('📢 Updated SideNav State:', newState)
 		set(newState)
 	},
 
@@ -30,7 +30,7 @@ export const useSideNavStore = create<SideNavState>((set) => ({
 				isExpanded: !state.isExpanded,
 				width: state.isExpanded ? (state.device === 'mobile' ? 0 : 72) : 260
 			}
-			console.log('📢 Toggled SideNav State:', newState)
+			// console.log('📢 Toggled SideNav State:', newState)
 			return newState
 		})
 	}

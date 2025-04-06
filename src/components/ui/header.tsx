@@ -6,8 +6,10 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ height }) => {
 	return (
-		<header className={`flex ${height} items-center justify-between p-4 shadow-md`}>
-			<h1 className="font-bold text-black">Salsa</h1>
+		<header className={`flex ${height} items-center p-4 shadow-md`}>
+			<div className="flex-1">
+			<h1 className="hidden font-bold text-black sm:block">DISCO</h1>
+			</div>
 			<p className="font-bold text-black">Online</p>
 		</header>
 	)

@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LogoIcon, MenuIcon } from '@/components/ui/icons'
+import { MenuIcon } from '@/components/ui/icons'
+import { Tooltip } from '@/components/ui/tooltip'
 import { useSideNavStore } from '@/state/use-side-nav-store'
 
 interface MenuItem {
@@ -13,9 +14,10 @@ interface MenuItem {
 interface SideNavProps {
 	menuItems: MenuItem[]
 	menuItemsFooter: MenuItem[]
+	logo: React.FC<{ className?: string }>
 }
 
-const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
+export const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter, logo: Logo }) => {
 	const pathname = usePathname()
 	const [activePath, setActivePath] = useState<string>(pathname)
 	const { isExpanded, width, toggleSideNav } = useSideNavStore()
@@ -26,16 +28,16 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 
 	const renderMenuItem = useMemo(
 		() =>
-			(item: MenuItem, isFooter: boolean = false) => {
+			(item: MenuItem): JSX.Element => {
 				const isActive = activePath === item.path
-				return (
+				const menuItem = (
 					<li key={item.path} onClick={() => setActivePath(item.path)}>
 						<Link href={item.path}>
 							<div
 								className={`group flex h-9 items-center gap-3 rounded-lg px-5 ${
 									isActive
 										? 'bg-white text-black shadow-md'
-										: 'text-[#A0A2A0] hover:bg-[#E5E5E5] hover:shadow-md'
+										: 'text-zinc-500 hover:bg-hotpink-400 hover:text-white hover:shadow-md'
 								}`}
 							>
 								{item.icon(isActive)}
@@ -50,6 +52,12 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 						</Link>
 					</li>
 				)
+
+				return !isExpanded ? (
+					<Tooltip key={item.path} content={item.label}>
+						{menuItem}
+					</Tooltip>
+				) : menuItem
 			},
 		[activePath, isExpanded, setActivePath]
 	)
@@ -57,7 +65,7 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 	return (
 		<nav
 			id="sidenav"
-			className="flex min-h-screen flex-col bg-background-sidenav transition-all duration-300"
+			className="flex min-h-screen flex-col bg-sage-100 transition-all duration-300"
 			style={{ width }}
 		>
 			<header
@@ -69,7 +77,7 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 						isExpanded ? 'opacity-100' : 'hidden opacity-0'
 					}`}
 				>
-					<LogoIcon className="h-8 w-8" />
+					<Logo className="h-8 w-8" />
 				</div>
 				<button onClick={toggleSideNav} className="ml-auto rounded p-1 transition-all duration-200">
 					<MenuIcon
@@ -85,7 +93,7 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 			</ul>
 
 			<div className="mt-auto p-2">
-				<ul className="space-y-1">{menuItemsFooter.map((item) => renderMenuItem(item, true))}</ul>
+				<ul className="space-y-1">{menuItemsFooter.map((item) => renderMenuItem(item))}</ul>
 			</div>
 		</nav>
 	)
