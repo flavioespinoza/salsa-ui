@@ -65,7 +65,7 @@ export const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter, lo
 	)
 
 	const Nav = ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
-		return (<nav {...props}>{children}</nav>)
+		return <nav {...props}>{children}</nav>
 	}
 
 	return (

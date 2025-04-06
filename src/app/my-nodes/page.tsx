@@ -10,9 +10,7 @@ export default function MyNodesPage() {
 			<h1 className="text-lg font-bold">My Nodes Page</h1>
 			<ul>
 				{names.map((name, index) => (
-					<li key={index}>
-						{name}
-					</li>
+					<li key={index}>{name}</li>
 				))}
 			</ul>
 		</MainLayout>
