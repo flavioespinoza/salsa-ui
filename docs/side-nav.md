@@ -22,25 +22,41 @@ import SideNav from '@flavioespinoza/salsa-ui'
 
 ---
 
-## 💡 Usage
+## 💡 Usage  (inside a component)
 
 ```tsx
-<SideNav
-	menuItems={[
-		{
-			label: 'Home',
-			path: '/',
-			icon: (active) => <HomeIcon className={active ? 'text-black' : 'text-muted'} />
-		}
-	]}
-	menuItemsFooter={[
-		{
-			label: 'Settings',
-			path: '/settings',
-			icon: (active) => <SettingsIcon className={active ? 'text-black' : 'text-muted'} />
-		}
-	]}
-/>
+"use client";
+
+import React from "react";
+import { Header, SideNav, useSideNav, useSideNavStore } from "@flavioespinoza/salsa-ui";
+import { menuItems, menuItemsFooter } from "@/constants/menu-items";
+
+const HEADER_HEIGHT = "h-[74px]";
+
+interface MainLayoutProps {
+  children: React.ReactNode;
+}
+
+const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+  useSideNav();
+  const { width } = useSideNavStore();
+
+  return (
+    <div id="mainLayoutWrapper" className="flex min-h-screen w-full">
+      <SideNav menuItems={menuItems} menuItemsFooter={menuItemsFooter} />
+      <div
+        id="mainLayoutContent"
+        className="flex flex-1 flex-col transition-all duration-300"
+        style={{ width: `calc(100% - ${width}px)` }}
+      >
+        <Header height={HEADER_HEIGHT} />
+        <main className={`flex-1 p-4`}>{children}</main>
+      </div>
+    </div>
+  );
+};
+
+export { MainLayout };
 ```
 
 ---
@@ -71,10 +87,10 @@ import SideNav from '@flavioespinoza/salsa-ui'
 This component expects a global Zustand store hook `useSideNavStore` with:
 
 ```ts
-{
-	isExpanded: boolean
-	width: string
-	toggleSideNav: () => void
+interface StoreTypes {
+  isExpanded: boolean;
+  width: string;
+  toggleSideNav: () => void;
 }
 ```
 
