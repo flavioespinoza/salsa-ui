@@ -143,6 +143,16 @@ npm install @flavioespinoza/salsa-ui
 
 ---
 
+## 🎨 Salsa UI CSS
+
+If you are using next JS, add this line to your app/layout.tsx file. If you are using crate react app add it to your index.tsx file.
+
+```ts
+import '@flavioespinoza/salsa-ui/dist/index.css'
+```
+
+---
+
 ## 🎨 Tailwind Configuration
 
 Update your `tailwind.config.js`:
