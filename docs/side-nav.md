@@ -17,7 +17,7 @@ A responsive and collapsible sidebar navigation component built with TailwindCSS
 ## 📦 Import
 
 ```ts
-import SideNav from '@flavioespinoza/salsa-ui'
+import { SideNav } from '@flavioespinoza/salsa-ui'
 ```
 
 ---
