@@ -57,7 +57,9 @@ export const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter, lo
 					<Tooltip key={item.path} content={item.label}>
 						{menuItem}
 					</Tooltip>
-				) : menuItem
+				) : (
+					menuItem
+				)
 			},
 		[activePath, isExpanded, setActivePath]
 	)

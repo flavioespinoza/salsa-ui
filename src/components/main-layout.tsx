@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { Header } from '@/components/ui/header'
-import { SideNav } from '@/components/ui/side-nav'
 import { LogoIcon } from '@/components/ui/icons'
+import { SideNav } from '@/components/ui/side-nav'
 import { menuItems, menuItemsFooter } from '@/constants/menu-items'
 import { useSideNav } from '@/hooks/use-side-nav'
 import { useSideNavStore } from '@/state/use-side-nav-store'
