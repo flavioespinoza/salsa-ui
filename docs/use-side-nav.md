@@ -83,22 +83,52 @@ export { MainLayout };
 
 ## 🧬 SideNav Store Snippet
 
+**NOTE**: `useSideNavStore` is available from `@flavioespinoza/salsa-ui` but this code example shows what the hook is and how it works.
+
+```ts
+import {  useSideNavStore } from "@flavioespinoza/salsa-ui";
+```
+
 The Zustand store must implement a `setDevice` function:
 
 ```ts
 // use-side-nav-store.ts
 import { create } from 'zustand'
 
-type DeviceType = 'mobile' | 'tablet' | 'desktop'
-
 interface SideNavState {
-	device: DeviceType
-	setDevice: (device: DeviceType) => void
+	device: 'mobile' | 'tablet' | 'desktop'
+	isExpanded: boolean
+	width: number
+	setDevice: (device: 'mobile' | 'tablet' | 'desktop') => void
+	toggleSideNav: () => void
 }
 
 export const useSideNavStore = create<SideNavState>((set) => ({
 	device: 'desktop',
-	setDevice: (device) => set({ device })
+	isExpanded: true,
+	width: 260,
+
+	setDevice: (device) => {
+		const newState = {
+			device,
+			isExpanded: device === 'desktop',
+			width: device === 'mobile' ? 0 : device === 'tablet' ? 72 : 260
+		}
+		console.log('📢 Updated SideNav State:', newState)
+		set(newState)
+	},
+
+	toggleSideNav: () => {
+		set((state) => {
+			const newState = {
+				...state,
+				isExpanded: !state.isExpanded,
+				width: state.isExpanded ? (state.device === 'mobile' ? 0 : 72) : 260
+			}
+			console.log('📢 Toggled SideNav State:', newState)
+			return newState
+		})
+	}
 }))
 ```
 
