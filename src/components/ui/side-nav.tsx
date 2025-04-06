@@ -36,8 +36,8 @@ export const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter, lo
 							<div
 								className={`group flex h-9 items-center gap-3 rounded-lg px-5 ${
 									isActive
-										? 'bg-white text-black shadow-md'
-										: 'text-zinc-500 hover:bg-hotpink-400 hover:text-white hover:shadow-md'
+										? `${width > 0 ? 'bg-white text-black shadow-md' : ''}`
+										: 'text-zinc-500 hover:bg-hotpink-500/60 hover:text-white hover:shadow-md'
 								}`}
 							>
 								{item.icon(isActive)}
@@ -72,7 +72,7 @@ export const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter, lo
 		>
 			<header
 				id="sidebar_header"
-				className="bg-gray-300 flex h-[74px] items-center px-4 py-3 shadow-md"
+				className={`bg-gray-300 flex h-[74px] items-center px-4 py-3 ${width > 0 ? 'shadow-md' : ''}`}
 			>
 				<div
 					className={`transition-opacity duration-300 ${
