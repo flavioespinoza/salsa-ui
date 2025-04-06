@@ -80,6 +80,60 @@ export { MainLayout };
 | `path`  | `string`                        | ✅        | URL path that triggers the active state   |
 | `icon`  | `(isActive: boolean) => JSX.Element` | ✅  | Function that renders icon dynamically    |
 
+### Example Menu Items and Footer Menu Items
+
+```ts
+"use client";
+
+import React from "react";
+import {
+  DocumentationIcon,
+  HomeIcon,
+  LogoutIcon,
+  SettingsIcon,
+} from "@flavioespinoza/salsa-ui";
+
+const iconClasses = (isActive: boolean) => {
+  return `w-[18px] h-[18px] text-[13px] ${
+    isActive ? "text-black" : "text-gray-400"
+  }`;
+};
+
+const menuItems = [
+  {
+    label: "Home",
+    path: "/",
+    icon: (isActive: boolean) => <HomeIcon className={iconClasses(isActive)} />,
+  },
+  {
+    label: "Settings",
+    path: "/settings",
+    icon: (isActive: boolean) => (
+      <SettingsIcon className={iconClasses(isActive)} />
+    ),
+  },
+];
+
+const menuItemsFooter = [
+  {
+    label: "Documentation",
+    path: "/documentation",
+    icon: (isActive: boolean) => (
+      <DocumentationIcon className={iconClasses(isActive)} />
+    ),
+  },
+  {
+    label: "Logout",
+    path: "/logout",
+    icon: (isActive: boolean) => (
+      <LogoutIcon className={iconClasses(isActive)} />
+    ),
+  },
+];
+
+export { menuItems, menuItemsFooter };
+```
+
 ---
 
 ## 🧠 Zustand Store
