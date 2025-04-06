@@ -1,61 +1,115 @@
 # Button
 
-A fully styled and extensible button component built with Tailwind CSS, Radix Slot, and class-variance-authority (). It supports multiple variants and sizes for flexible usage across your UI.
+The `Button` component from `@flavioespinoza/salsa-ui` is a fully customizable button using Tailwind CSS and [class-variance-authority (CVA)](https://cva.style). It supports multiple variants and sizes and provides a consistent appearance across your app.
 
-## Usage
+---
+
+## ✨ Features
+
+- Multiple visual variants: `default`, `outline`, `ghost`, `link`, `destructive`, `secondary`, `static`
+- Multiple sizes: `sm`, `default`, `lg`, `icon`
+- Tailwind CSS powered
+- Built-in `asChild` prop to render with custom wrappers (e.g. `<Link>`)
+
+---
+
+## 📦 Import
 
 ```tsx
 import { Button } from '@flavioespinoza/salsa-ui'
+```
 
-<Button>Default</Button>
-<Button variant="destructive">Delete</Button>
+---
+
+## 🚀 Usage
+
+### Basic
+
+```tsx
+<Button>Click Me</Button>
+```
+
+### Variant Examples
+
+```tsx
+<Button variant="default">Default</Button>
 <Button variant="outline">Outline</Button>
-<Button variant="secondary">Secondary</Button>
 <Button variant="ghost">Ghost</Button>
 <Button variant="link">Link</Button>
+<Button variant="destructive">Delete</Button>
+<Button variant="secondary">Secondary</Button>
+```
+
+### Size Examples
+
+```tsx
 <Button size="sm">Small</Button>
+<Button size="default">Default</Button>
 <Button size="lg">Large</Button>
 <Button size="icon">🔍</Button>
 ```
 
-## Props
+---
 
-| Name      | Type                                               | Default   | Description                                      |
-|-----------|----------------------------------------------------|-----------|--------------------------------------------------|
-| `variant` | `"default" | "destructive" | "outline" | "secondary" | "ghost" | "static" | "link"` | `"default"` | Visual style of the button.                    |
-| `size`    | `"default" | "sm" | "lg" | "icon"`                     | `"default"` | Size of the button.                            |
-| `asChild` | `boolean`                                       | `false`  | Render a custom element instead of `<button>`. |
-| ...props   | `React.ButtonHTMLAttributes<HTMLButtonElement>` | –         | Standard button props.                          |
+## 🧠 `asChild` Prop
 
-## Variants
-
-- **default**: Primary button with brand styling.
-- **destructive**: Red styling for delete or destructive actions.
-- **outline**: Bordered button with hover background.
-- **secondary**: Alternate button style for secondary actions.
-- **ghost**: Bare button with hover state.
-- **static**: No style — useful for special layouts.
-- **link**: Styled like a text link.
-
-## Sizes
-
-- **default**: Standard height with padding.
-- **sm**: Smaller height, text, and padding.
-- **lg**: Larger height with extended horizontal padding.
-- **icon**: Square button for icon-only buttons.
-
-## Custom Styling
-
-Use the exported `buttonVariants` function to generate custom class names:
+Use `asChild` to render a different element (like `<Link>`) with button styles:
 
 ```tsx
-import { buttonVariants } from '@flavioespinoza/salsa-ui'
+import Link from 'next/link'
 
-const customClass = buttonVariants({ variant: 'ghost', size: 'lg' })
+<Button asChild>
+	<Link href="/dashboard">Go to Dashboard</Link>
+</Button>
 ```
 
-## Dependencies
+---
 
-- [@radix-ui/react-slot](https://www.radix-ui.com/primitives/docs/utilities/slot)
-- [class-variance-authority](https://cva.style)
+## 🎨 Styling
 
+You can override or extend styles using the `className` prop:
+
+```tsx
+<Button className="bg-red-500 hover:bg-red-600">Custom</Button>
+```
+
+---
+
+## 📋 Props
+
+Inherits all native `button` attributes, plus:
+
+| Prop       | Type       | Description                                               |
+|------------|------------|-----------------------------------------------------------|
+| `variant`  | string     | One of: `default`, `outline`, `ghost`, `link`, `destructive`, `secondary`, `static` |
+| `size`     | string     | One of: `sm`, `default`, `lg`, `icon`                     |
+| `asChild`  | boolean    | If `true`, renders `Slot` instead of `button`             |
+| `className`| string     | Tailwind utility classes to override or extend styles     |
+
+---
+
+## 🧪 Testing Tips
+
+- Use `getByRole('button')` in tests
+- Check `disabled` state visually and functionally
+- Ensure accessibility via `aria-*` attributes if needed
+
+---
+
+## 🧱 Example With Icons
+
+```tsx
+import { ArrowRight } from 'lucide-react'
+import { Button } from '@flavioespinoza/salsa-ui'
+
+<Button>
+	Next <ArrowRight className="ml-2 h-4 w-4" />
+</Button>
+```
+
+---
+
+## 🔗 Related
+
+- [class-variance-authority](https://github.com/joe-bell/cva)
+- [Tailwind CSS Button Styling](https://tailwindcss.com/docs)
