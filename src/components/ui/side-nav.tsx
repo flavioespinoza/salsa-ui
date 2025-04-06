@@ -64,8 +64,12 @@ export const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter, lo
 		[activePath, isExpanded, setActivePath]
 	)
 
+	const Nav = ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+		return (<nav {...props}>{children}</nav>)
+	}
+
 	return (
-		<nav
+		<Nav
 			id="sidenav"
 			className="flex min-h-screen flex-col bg-sage-100 transition-all duration-300"
 			style={{ width }}
@@ -97,7 +101,7 @@ export const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter, lo
 			<div className="mt-auto p-2">
 				<ul className="space-y-1">{menuItemsFooter.map((item) => renderMenuItem(item))}</ul>
 			</div>
-		</nav>
+		</Nav>
 	)
 }
 
