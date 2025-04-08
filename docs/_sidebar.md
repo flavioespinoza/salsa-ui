@@ -10,6 +10,7 @@
   - [HeaderMobile](header-mobile.md)
   - [Icons](icons.md)
   - [Input](input.md)
+  - [MorphingChart](morphing-chart.md)
   - [SideNav](side-nav.md)
   - [Textarea](textarea.md)
   - [Tooltip](tooltip.md)
