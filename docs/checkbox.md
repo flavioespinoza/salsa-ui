@@ -12,7 +12,7 @@ It uses TailwindCSS for styling and includes a custom checkmark icon using `luci
 - Fully accessible with keyboard support
 - Styled with Tailwind CSS utility classes
 - Custom animated checkmark
-- Custom `hotpink` + `sage` theme by default
+- Theme-aware styling with semantic color tokens
 
 ---
 
@@ -67,20 +67,38 @@ export default function ControlledCheckbox() {
 
 ---
 
-## 🎨 Styling
+## 🎨 Styling & Theming
 
-The checkbox uses Tailwind utility classes with a default theme:
+The checkbox uses semantic color tokens that automatically adapt to light and dark modes:
 
-- `border-primary`
-- `bg-sage-200`
-- `data-[state=checked]:bg-hotpink-500`
-- `data-[state=checked]:text-white`
+- `border-primary` - Border color from theme
+- `bg-input-background` - Background color from theme
+- `data-[state=checked]:bg-accent-interactive` - Checked state uses vibrant accent color (stays hot pink in both modes)
+- `data-[state=checked]:text-accent-interactive-foreground` - Checked text color (white)
 
-You can override these with the `className` prop:
+### Customizing via CSS Variables
+
+Override the default colors by setting CSS variables:
+
+```css
+:root {
+	--input-background: hsl(220 14% 96%);
+	--secondary: hsl(262 83% 58%);
+	--secondary-foreground: hsl(0 0% 100%);
+}
+```
+
+### Customizing via className
+
+You can also override styles using the `className` prop:
 
 ```tsx
-<Checkbox className="border-red-500 data-[state=checked]:bg-red-500" />
+<Checkbox className="border-blue-500 data-[state=checked]:bg-blue-500" />
 ```
+
+### Light/Dark Mode
+
+The checkbox automatically adapts to light and dark modes. No additional configuration needed when using the semantic tokens.
 
 ---
 
@@ -128,5 +146,6 @@ This component passes all props to `@radix-ui/react-checkbox`.
 
 ## 📝 Notes
 
-- This checkbox is styled to match the Salsa UI theme (`hotpink`, `sage`)
+- This checkbox uses semantic color tokens that automatically adapt to light/dark modes
+- Customize the theme by overriding CSS variables or using the `className` prop
 - Fully customizable using utility classes or by extending in your own component

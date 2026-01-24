@@ -4,7 +4,7 @@
 
 body {
 	font-family: var(--font-inter), sans-serif;
-	@apply text-black;
+	@apply text-foreground;
 }
 
 @layer utilities {
@@ -74,6 +74,34 @@ body {
 		--chart-4: hsl(43 74% 66%); /* #f4a261 */
 		--chart-5: hsl(27 87% 67%); /* #e9c46a */
 		--radius: 0.5rem;
+
+		/* Success state colors */
+		--success: hsl(142 76% 36%); /* #22c55e - green-500 */
+		--success-foreground: hsl(0 0% 100%); /* #ffffff */
+
+		/* Warning state colors */
+		--warning: hsl(45 93% 47%); /* #eab308 - yellow-500 */
+		--warning-foreground: hsl(0 0% 100%); /* #ffffff */
+
+		/* Input/form element backgrounds */
+		--input-background: var(--sage-200);
+
+		/* Sidenav colors */
+		--sidenav-background: var(--sage-100);
+		--sidenav-header: hsl(0 0% 83%); /* #d4d4d4 - gray-300 */
+		--sidenav-text: hsl(240 4% 46%); /* #71717a - zinc-500 */
+		--sidenav-item-hover: var(--hotpink-500);
+
+		/* Card colors */
+		--card-border: hsl(0 0% 4% / 0.05); /* stone-950/5 equivalent */
+
+		/* Destructive state for toast close button */
+		--destructive-muted: hsl(0 84% 60%); /* red-500 */
+		--destructive-muted-foreground: hsl(0 0% 97%); /* red-50 */
+
+		/* Interactive accent - stays vibrant in both modes */
+		--accent-interactive: var(--hotpink-500);
+		--accent-interactive-foreground: hsl(0 0% 100%); /* white */
 	}
 	.dark {
 		--background: hsl(0 0% 3.9%); /* #0a0a0a */
@@ -100,6 +128,34 @@ body {
 		--chart-3: hsl(30 80% 55%); /* #f59e0b */
 		--chart-4: hsl(280 65% 60%); /* #a855f7 */
 		--chart-5: hsl(340 75% 55%); /* #ec4899 */
+
+		/* Success state colors - dark mode */
+		--success: hsl(142 69% 58%); /* #4ade80 - green-400 */
+		--success-foreground: hsl(0 0% 9%); /* #171717 */
+
+		/* Warning state colors - dark mode */
+		--warning: hsl(48 96% 53%); /* #facc15 - yellow-400 */
+		--warning-foreground: hsl(0 0% 9%); /* #171717 */
+
+		/* Input/form element backgrounds - dark mode */
+		--input-background: hsl(0 0% 14.9%); /* #262626 */
+
+		/* Sidenav colors - dark mode */
+		--sidenav-background: hsl(0 0% 7%); /* #121212 */
+		--sidenav-header: hsl(0 0% 10%); /* #1a1a1a */
+		--sidenav-text: hsl(240 5% 65%); /* #a1a1aa - zinc-400 */
+		--sidenav-item-hover: hsl(350 99% 60%); /* hotpink-500 */
+
+		/* Card colors - dark mode */
+		--card-border: hsl(0 0% 100% / 0.05); /* white/5 for dark mode */
+
+		/* Destructive state for toast close button - dark mode */
+		--destructive-muted: hsl(0 72% 51%); /* red-600 */
+		--destructive-muted-foreground: hsl(0 86% 97%); /* red-50 */
+
+		/* Interactive accent - stays vibrant in dark mode too */
+		--accent-interactive: hsl(350 99% 60%); /* hotpink-500 */
+		--accent-interactive-foreground: hsl(0 0% 100%); /* white */
 	}
 }
 

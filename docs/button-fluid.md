@@ -17,5 +17,28 @@ import { ButtonFluid } from '@flavioespinoza/salsa-ui'
 
 const handleClick = () => alert('Button Clicked!')
 
-<ButtonFluid className="bg-green-500 text-white" onClick={handleClick}>Click Me</ButtonFluid>
+<ButtonFluid className="bg-primary text-primary-foreground" onClick={handleClick}>Click Me</ButtonFluid>
 ```
+
+## Theming
+
+The ButtonFluid component uses semantic color tokens that automatically adapt to light and dark modes:
+
+- Default background uses `bg-muted`
+- Override with semantic tokens like `bg-primary`, `bg-secondary`, etc.
+
+### Customizing via CSS Variables
+
+```css
+:root {
+  --muted: hsl(0 0% 96.1%);
+}
+
+.dark {
+  --muted: hsl(0 0% 14.9%);
+}
+```
+
+### Light/Dark Mode
+
+The button automatically adapts to light and dark modes when using semantic tokens.

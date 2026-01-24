@@ -75,7 +75,30 @@ Inherits all native `div` attributes, plus:
 
 ---
 
-## 🎨 Styling
+## 🎨 Styling & Theming
+
+The Badge component uses semantic color tokens that automatically adapt to light and dark modes:
+
+- `default` - Uses `bg-primary`
+- `secondary` - Uses `bg-secondary`
+- `destructive` - Uses `bg-destructive`
+- `success` - Uses `bg-success`
+- `warning` - Uses `bg-warning`
+
+### Customizing via CSS Variables
+
+Override badge colors by setting CSS variables:
+
+```css
+:root {
+	--success: hsl(142 76% 36%);
+	--success-foreground: hsl(0 0% 100%);
+	--warning: hsl(45 93% 47%);
+	--warning-foreground: hsl(0 0% 100%);
+}
+```
+
+### Customizing via className
 
 Customize badge appearance with Tailwind:
 
@@ -84,6 +107,10 @@ Customize badge appearance with Tailwind:
 <Badge className="text-sm px-4 py-1">Large Badge</Badge>
 <Badge className="rounded-full">Rounded</Badge>
 ```
+
+### Light/Dark Mode
+
+Badges automatically adapt to light and dark modes. Success and warning badges use lighter colors in dark mode for better visibility.
 
 ---
 

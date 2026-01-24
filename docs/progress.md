@@ -57,9 +57,9 @@ import { Progress } from '@flavioespinoza/salsa-ui'
 ### Custom Colors
 
 ```tsx
-<Progress value={60} className="[&>div]:bg-green-500" />
-<Progress value={30} className="[&>div]:bg-yellow-500" />
-<Progress value={90} className="[&>div]:bg-blue-500" />
+<Progress value={60} className="[&>div]:bg-success" />
+<Progress value={30} className="[&>div]:bg-warning" />
+<Progress value={90} className="[&>div]:bg-secondary" />
 ```
 
 ---
@@ -162,20 +162,43 @@ const progress = (completed / tasks.length) * 100
 
 ---
 
-## 🎨 Styling
+## 🎨 Theming
 
-Customize progress bar appearance:
+The Progress component uses semantic color tokens that automatically adapt to light and dark modes:
+
+- `bg-primary/20` - Track background (20% opacity of primary)
+- `bg-primary` - Progress indicator fill
+
+### Customizing via CSS Variables
+
+Override progress colors by setting CSS variables:
+
+```css
+:root {
+	--primary: hsl(221 83% 53%);
+}
+
+.dark {
+	--primary: hsl(221 83% 63%);
+}
+```
+
+### Customizing via className
 
 ```tsx
 {/* Custom background and indicator */}
 <Progress
   value={70}
-  className="h-3 bg-slate-200 [&>div]:bg-gradient-to-r [&>div]:from-blue-500 [&>div]:to-purple-500"
+  className="h-3 bg-muted [&>div]:bg-gradient-to-r [&>div]:from-primary [&>div]:to-secondary"
 />
 
 {/* Rounded ends */}
 <Progress value={60} className="rounded-full" />
 ```
+
+### Light/Dark Mode
+
+The progress bar automatically adapts to light and dark modes. The track and indicator colors adjust for proper contrast in both modes.
 
 ---
 

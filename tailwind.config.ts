@@ -96,15 +96,37 @@ const config: Config = {
 				},
 				accent: {
 					DEFAULT: 'var(--accent)',
-					foreground: 'var(--accent-foreground)'
+					foreground: 'var(--accent-foreground)',
+					interactive: 'var(--accent-interactive)',
+					'interactive-foreground': 'var(--accent-interactive-foreground)'
 				},
 				destructive: {
 					DEFAULT: 'var(--destructive)',
-					foreground: 'var(--destructive-foreground)'
+					foreground: 'var(--destructive-foreground)',
+					muted: 'var(--destructive-muted)',
+					'muted-foreground': 'var(--destructive-muted-foreground)'
+				},
+				success: {
+					DEFAULT: 'var(--success)',
+					foreground: 'var(--success-foreground)'
+				},
+				warning: {
+					DEFAULT: 'var(--warning)',
+					foreground: 'var(--warning-foreground)'
 				},
 				border: 'var(--border)',
-				input: 'var(--input)',
+				input: {
+					DEFAULT: 'var(--input)',
+					background: 'var(--input-background)'
+				},
 				ring: 'var(--ring)',
+				sidenav: {
+					DEFAULT: 'var(--sidenav-background)',
+					header: 'var(--sidenav-header)',
+					text: 'var(--sidenav-text)',
+					'item-hover': 'var(--sidenav-item-hover)'
+				},
+				'card-border': 'var(--card-border)',
 				chart: {
 					'1': 'var(--chart-1)',
 					'2': 'var(--chart-2)',

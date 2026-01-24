@@ -34,7 +34,7 @@ import { HomeIcon, SettingsIcon } from '@flavioespinoza/salsa-ui'
 
 ```tsx
 <HomeIcon className="h-5 w-5 text-muted-foreground" />
-<SettingsIcon className="h-6 w-6 text-pink-600" />
+<SettingsIcon className="h-6 w-6 text-primary" />
 ```
 
 Each icon defaults to 18×18 size unless otherwise specified. You can override size, color, margin, etc. via Tailwind.
@@ -50,13 +50,39 @@ Each icon defaults to 18×18 size unless otherwise specified. You can override s
 
 ---
 
-## 🎨 Styling Tips
+## 🎨 Theming
 
-Use `currentColor` in SVG ensures the icon inherits its color from the parent. You can apply Tailwind like:
+All icons use `currentColor` for their fill/stroke, meaning they automatically inherit the text color from their parent element. This makes them fully compatible with semantic color tokens.
+
+### Using Semantic Tokens
 
 ```tsx
-<LogoutIcon className="text-red-500 hover:text-red-700" />
+<HomeIcon className="text-foreground" />
+<SettingsIcon className="text-muted-foreground" />
+<LogoutIcon className="text-destructive hover:text-destructive/80" />
 ```
+
+### Customizing via CSS Variables
+
+Icons inherit from the parent's color, so customize by setting text color variables:
+
+```css
+:root {
+	--foreground: hsl(0 0% 3.9%);
+	--muted-foreground: hsl(0 0% 45.1%);
+}
+
+.dark {
+	--foreground: hsl(0 0% 98%);
+	--muted-foreground: hsl(0 0% 63.9%);
+}
+```
+
+### Light/Dark Mode
+
+Icons automatically adapt to light and dark modes when using semantic color tokens like `text-foreground` or `text-muted-foreground`.
+
+### Styling Tips
 
 To animate or add interactivity:
 

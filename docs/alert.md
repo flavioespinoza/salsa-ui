@@ -100,9 +100,34 @@ Inherits all native `div` attributes.
 
 ---
 
-## 🎨 Styling
+## 🎨 Theming
 
-The Alert component uses semantic color tokens that adapt to your theme:
+The Alert component uses semantic color tokens that automatically adapt to light and dark modes:
+
+- `default` - Uses `bg-background` with `border-border`
+- `destructive` - Uses `border-destructive/50` and `text-destructive`
+- `success` - Uses `border-success/50` and `text-success`
+- `warning` - Uses `border-warning/50` and `text-warning`
+
+### Customizing via CSS Variables
+
+Override alert colors by setting CSS variables:
+
+```css
+:root {
+	--success: hsl(142 76% 36%);
+	--warning: hsl(45 93% 47%);
+	--destructive: hsl(0 84% 60%);
+}
+
+.dark {
+	--success: hsl(142 76% 46%);
+	--warning: hsl(45 93% 57%);
+	--destructive: hsl(0 84% 70%);
+}
+```
+
+### Customizing via className
 
 ```tsx
 <Alert className="border-2">
@@ -110,6 +135,10 @@ The Alert component uses semantic color tokens that adapt to your theme:
   <AlertDescription>You can add custom classes to any part.</AlertDescription>
 </Alert>
 ```
+
+### Light/Dark Mode
+
+Alerts automatically adapt to light and dark modes. The success and warning variants use slightly lighter colors in dark mode for better visibility.
 
 ---
 

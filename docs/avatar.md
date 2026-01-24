@@ -160,9 +160,32 @@ Inherits all Radix UI Avatar.Fallback props:
 
 ---
 
-## 🎨 Styling
+## 🎨 Theming
 
-Customize the avatar appearance:
+The Avatar component uses semantic color tokens that automatically adapt to light and dark modes:
+
+- `bg-muted` - Fallback background color
+- `text-foreground` - Fallback text color (inherits from parent)
+
+### Customizing via CSS Variables
+
+Override avatar colors by setting CSS variables:
+
+```css
+:root {
+	--muted: hsl(0 0% 96.1%);
+	--primary: hsl(221 83% 53%);
+	--primary-foreground: hsl(0 0% 100%);
+}
+
+.dark {
+	--muted: hsl(0 0% 14.9%);
+	--primary: hsl(221 83% 63%);
+	--primary-foreground: hsl(0 0% 100%);
+}
+```
+
+### Customizing via className
 
 ```tsx
 <Avatar className="h-12 w-12 border-2 border-primary">
@@ -172,6 +195,10 @@ Customize the avatar appearance:
   </AvatarFallback>
 </Avatar>
 ```
+
+### Light/Dark Mode
+
+The avatar automatically adapts to light and dark modes. The fallback background uses `bg-muted` which adjusts for proper contrast in both modes.
 
 ---
 

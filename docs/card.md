@@ -116,6 +116,38 @@ test("renders card title and description", () => {
 
 ---
 
+## 🎨 Theming
+
+The Card component uses semantic color tokens that automatically adapt to light and dark modes:
+
+- `bg-card` - Card background color
+- `text-card-foreground` - Card text color
+- `outline-card-border` - Subtle border outline
+
+### Customizing via CSS Variables
+
+Override card colors by setting CSS variables:
+
+```css
+:root {
+	--card: hsl(0 0% 100%);
+	--card-foreground: hsl(0 0% 3.9%);
+	--card-border: hsl(0 0% 4% / 0.05);
+}
+
+.dark {
+	--card: hsl(0 0% 7%);
+	--card-foreground: hsl(0 0% 98%);
+	--card-border: hsl(0 0% 100% / 0.05);
+}
+```
+
+### Light/Dark Mode
+
+Cards automatically adapt to light and dark modes when the `dark` class is applied to the document.
+
+---
+
 ## 🔗 Related
 
 - [`<CardSection />`](./card-section.md)

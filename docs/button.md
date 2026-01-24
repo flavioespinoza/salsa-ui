@@ -65,13 +65,37 @@ import Link from 'next/link'
 
 ---
 
-## 🎨 Styling
+## 🎨 Styling & Theming
+
+The Button component uses semantic color tokens that automatically adapt to light and dark modes:
+
+- `default` variant uses `bg-primary` with `hover:bg-secondary/60`
+- `destructive` variant uses `bg-destructive`
+- `secondary` variant uses `bg-secondary`
+
+### Customizing via CSS Variables
+
+Override the default colors by setting CSS variables in your app:
+
+```css
+:root {
+	--primary: hsl(221 83% 53%);
+	--primary-foreground: hsl(0 0% 100%);
+	--secondary: hsl(262 83% 58%);
+}
+```
+
+### Customizing via className
 
 You can override or extend styles using the `className` prop:
 
 ```tsx
-<Button className="bg-red-500 hover:bg-red-600">Custom</Button>
+<Button className="bg-blue-500 hover:bg-blue-600">Custom</Button>
 ```
+
+### Light/Dark Mode
+
+Buttons automatically adapt to light and dark modes. The `default` variant inverts colors in dark mode for proper contrast.
 
 ---
 

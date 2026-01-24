@@ -36,8 +36,8 @@ export const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter, lo
 							<div
 								className={`group flex h-9 items-center gap-3 rounded-lg px-5 ${
 									isActive
-										? `${width > 0 ? 'bg-white text-black shadow-md' : ''}`
-										: 'text-zinc-500 hover:bg-hotpink-500/60 hover:text-white hover:shadow-md'
+										? `${width > 0 ? 'bg-card text-card-foreground shadow-md' : ''}`
+										: 'text-sidenav-text hover:bg-sidenav-item-hover/60 hover:text-accent-interactive-foreground hover:shadow-md'
 								}`}
 							>
 								{item.icon(isActive)}
@@ -71,12 +71,12 @@ export const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter, lo
 	return (
 		<Nav
 			id="sidenav"
-			className="flex min-h-screen flex-col bg-sage-100 transition-all duration-300"
+			className="flex min-h-screen flex-col bg-sidenav transition-all duration-300"
 			style={{ width }}
 		>
 			<header
 				id="sidebar_header"
-				className={`bg-gray-300 flex h-[74px] items-center px-4 py-3 ${width > 0 ? 'shadow-md' : ''}`}
+				className={`bg-sidenav-header flex h-[74px] items-center px-4 py-3 ${width > 0 ? 'shadow-md' : ''}`}
 			>
 				<div
 					className={`transition-opacity duration-300 ${
@@ -87,7 +87,7 @@ export const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter, lo
 				</div>
 				<button onClick={toggleSideNav} className="ml-auto rounded p-1 transition-all duration-200">
 					<MenuIcon
-						className={`h-6 w-6 cursor-pointer text-[#A0A2A0] transition-transform duration-100 hover:text-black ${
+						className={`h-6 w-6 cursor-pointer text-muted-foreground transition-transform duration-100 hover:text-foreground ${
 							isExpanded ? 'rotate-0' : 'rotate-180'
 						}`}
 					/>

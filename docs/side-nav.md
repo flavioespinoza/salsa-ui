@@ -37,7 +37,7 @@ import { SideNav } from '@flavioespinoza/salsa-ui'
 
 ### Active State
 - Active menu items have white background and black text
-- Inactive items have gray text with pink hover effect
+- Inactive items use `text-sidenav-text` with `bg-sidenav-item-hover/60` on hover
 
 ### Tooltips
 - Only shown when sidebar is collapsed on tablet/desktop
@@ -207,3 +207,38 @@ interface SideNavStore {
   - Opacity transitions for text labels
   - MenuIcon rotation animation on toggle
   - Fade transitions for logo visibility
+
+---
+
+## 🎨 Theming
+
+The SideNav uses semantic color tokens that automatically adapt to light and dark modes:
+
+- `bg-sidenav` - Sidebar background
+- `bg-sidenav-header` - Header background
+- `text-sidenav-text` - Inactive item text color
+- `bg-sidenav-item-hover` - Item hover background
+
+### Customizing via CSS Variables
+
+Override sidebar colors by setting CSS variables:
+
+```css
+:root {
+	--sidenav-background: hsl(220 14% 96%);
+	--sidenav-header: hsl(220 13% 91%);
+	--sidenav-text: hsl(220 9% 46%);
+	--sidenav-item-hover: hsl(221 83% 53%);
+}
+
+.dark {
+	--sidenav-background: hsl(220 14% 10%);
+	--sidenav-header: hsl(220 13% 15%);
+	--sidenav-text: hsl(220 9% 65%);
+	--sidenav-item-hover: hsl(221 83% 53%);
+}
+```
+
+### Light/Dark Mode
+
+The sidebar automatically adapts to light and dark modes when the `dark` class is applied to the document.

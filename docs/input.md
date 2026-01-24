@@ -54,21 +54,42 @@ export default function ControlledInput() {
 
 ---
 
-## 🎨 Styling
+## 🎨 Styling & Theming
 
-Default Tailwind classes applied:
+The Input component uses semantic color tokens that automatically adapt to light and dark modes.
+
+### Default Styles
 
 - `h-10 w-full rounded-md`
-- `bg-background px-3 py-2`
+- `bg-input-background` - Uses theme-aware input background
+- `border-input` - Uses theme-aware border color
 - `text-base md:text-sm`
-- `focus-visible:ring-2 ring-ring`
+- `focus-visible:ring-2 ring-ring` - Focus ring from theme
 - `disabled:opacity-50`
+
+### Customizing via CSS Variables
+
+Override the default colors by setting CSS variables:
+
+```css
+:root {
+	--input-background: hsl(220 14% 96%);
+	--input: hsl(220 13% 91%);
+	--ring: hsl(221 83% 53%);
+}
+```
+
+### Customizing via className
 
 You can customize it using the `className` prop:
 
 ```tsx
-<Input className="border-red-500 focus-visible:ring-red-500" />
+<Input className="border-blue-500 focus-visible:ring-blue-500" />
 ```
+
+### Light/Dark Mode
+
+Inputs automatically adapt to light and dark modes. In dark mode, the background becomes darker for proper contrast.
 
 ---
 
