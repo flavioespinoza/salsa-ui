@@ -10,16 +10,16 @@ module.exports = {
 		'!src/**/__tests__/**',
 		'!src/**/index.ts',
 	],
-	setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+	setupFilesAfterEnv: ['<rootDir>/jest.setup.cjs'],
 	moduleNameMapper: {
 		'^@/(.*)$': '<rootDir>/src/$1',
 	},
 	transform: {
-		'^.+\\.tsx?$': [
+		'^.+\\.[jt]sx?$': [
 			'ts-jest',
 			{
 				tsconfig: {
-					jsx: 'react',
+					jsx: 'react-jsx',
 				},
 			},
 		],

@@ -116,6 +116,29 @@ test("renders card title and description", () => {
 
 ---
 
+## 🎨 Theming
+
+The Card uses semantic theme tokens for automatic light/dark mode support:
+
+- `bg-card` — card background via `--card` CSS variable
+- `text-card-foreground` — card text via `--card-foreground` CSS variable
+- `outline-foreground/5` — subtle outline derived from the foreground token
+
+Override CSS variables to customize:
+
+```css
+:root {
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 3.9%);
+}
+.dark {
+  --card: hsl(0 0% 3.9%);
+  --card-foreground: hsl(0 0% 98%);
+}
+```
+
+---
+
 ## 🔗 Related
 
 - [`<CardSection />`](./card-section.md)

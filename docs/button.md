@@ -67,10 +67,27 @@ import Link from 'next/link'
 
 ## 🎨 Styling
 
-You can override or extend styles using the `className` prop:
+The default button uses semantic theme tokens (`bg-primary`, `hover:bg-secondary/60`) that automatically adapt to light/dark modes. You can override or extend styles using the `className` prop:
 
 ```tsx
-<Button className="bg-red-500 hover:bg-red-600">Custom</Button>
+<Button className="bg-destructive hover:bg-destructive/90">Custom</Button>
+```
+
+### Theming
+
+Customize button colors by overriding CSS variables:
+
+```css
+:root {
+  --primary: hsl(95 9% 39%);          /* default button background */
+  --primary-foreground: hsl(0 0% 98%); /* default button text */
+  --secondary: hsl(350 99% 60%);       /* hover background */
+}
+.dark {
+  --primary: hsl(0 0% 98%);
+  --primary-foreground: hsl(0 0% 9%);
+  --secondary: hsl(0 0% 14.9%);
+}
 ```
 
 ---

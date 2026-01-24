@@ -14,7 +14,7 @@ import {
 } from '../components/ui/icons'
 
 const iconClasses = (isActive: boolean) => {
-	return `w-[18px] h-[18px] text-[13px] ${isActive ? 'text-black' : 'text-gray-400'}`
+	return `w-[18px] h-[18px] text-[13px] ${isActive ? 'text-black' : 'text-muted-foreground'}`
 }
 
 const menuItems = [
