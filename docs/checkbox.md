@@ -12,7 +12,7 @@ It uses TailwindCSS for styling and includes a custom checkmark icon using `luci
 - Fully accessible with keyboard support
 - Styled with Tailwind CSS utility classes
 - Custom animated checkmark
-- Custom `hotpink` + `sage` theme by default
+- Themed via CSS custom properties for light/dark mode support
 
 ---
 
@@ -69,17 +69,34 @@ export default function ControlledCheckbox() {
 
 ## 🎨 Styling
 
-The checkbox uses Tailwind utility classes with a default theme:
+The checkbox uses semantic theme tokens that automatically adapt to light/dark modes:
 
-- `border-primary`
-- `bg-sage-200`
-- `data-[state=checked]:bg-hotpink-500`
-- `data-[state=checked]:text-white`
+- `border-primary` — border uses the primary color token
+- `bg-input-background` — unchecked background via `--input-background`
+- `data-[state=checked]:bg-secondary` — checked state via `--secondary`
+- `data-[state=checked]:text-secondary-foreground` — check icon color via `--secondary-foreground`
 
 You can override these with the `className` prop:
 
 ```tsx
-<Checkbox className="border-red-500 data-[state=checked]:bg-red-500" />
+<Checkbox className="border-destructive data-[state=checked]:bg-destructive" />
+```
+
+### Theming
+
+Customize the checkbox appearance by overriding CSS variables:
+
+```css
+:root {
+  --input-background: hsl(82 8% 80%); /* unchecked background */
+  --secondary: hsl(350 99% 60%);      /* checked background */
+  --secondary-foreground: hsl(0 0% 100%); /* check icon color */
+}
+.dark {
+  --input-background: hsl(0 0% 14.9%);
+  --secondary: hsl(0 0% 14.9%);
+  --secondary-foreground: hsl(0 0% 98%);
+}
 ```
 
 ---
@@ -128,5 +145,5 @@ This component passes all props to `@radix-ui/react-checkbox`.
 
 ## 📝 Notes
 
-- This checkbox is styled to match the Salsa UI theme (`hotpink`, `sage`)
-- Fully customizable using utility classes or by extending in your own component
+- This checkbox is styled using semantic theme tokens and responds to light/dark mode automatically
+- Fully customizable by overriding CSS variables or using utility classes

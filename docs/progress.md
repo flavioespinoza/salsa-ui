@@ -57,9 +57,9 @@ import { Progress } from '@flavioespinoza/salsa-ui'
 ### Custom Colors
 
 ```tsx
-<Progress value={60} className="[&>div]:bg-green-500" />
-<Progress value={30} className="[&>div]:bg-yellow-500" />
-<Progress value={90} className="[&>div]:bg-blue-500" />
+<Progress value={60} className="[&>div]:bg-success" />
+<Progress value={30} className="[&>div]:bg-warning" />
+<Progress value={90} className="[&>div]:bg-secondary" />
 ```
 
 ---
@@ -170,11 +170,46 @@ Customize progress bar appearance:
 {/* Custom background and indicator */}
 <Progress
   value={70}
-  className="h-3 bg-slate-200 [&>div]:bg-gradient-to-r [&>div]:from-blue-500 [&>div]:to-purple-500"
+  className="h-3 bg-muted [&>div]:bg-gradient-to-r [&>div]:from-secondary [&>div]:to-primary"
 />
 
 {/* Rounded ends */}
 <Progress value={60} className="rounded-full" />
+```
+
+---
+
+## 🎨 Theming
+
+The Progress component uses semantic color tokens that adapt to your theme:
+
+- **Track background**: `bg-primary/20` — a translucent version of the primary color
+- **Indicator fill**: `bg-primary` — the primary brand color
+
+Override these CSS variables to customize both light and dark modes:
+
+```css
+:root {
+  --primary: hsl(82 40% 45%);
+}
+.dark {
+  --primary: hsl(0 0% 98%);
+}
+```
+
+### Light/Dark Mode
+
+The progress bar automatically adapts between light and dark modes via CSS variables. No component-level overrides are needed:
+
+- **Light mode**: Track is a soft translucent primary, indicator is the full primary color
+- **Dark mode**: Same tokens resolve to dark-theme values, ensuring proper contrast
+
+```tsx
+{/* Renders correctly in both light and dark mode */}
+<Progress value={75} />
+
+{/* Custom semantic overrides */}
+<Progress value={50} className="[&>div]:bg-success" />
 ```
 
 ---

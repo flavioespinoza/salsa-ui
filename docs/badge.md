@@ -75,7 +75,26 @@ Inherits all native `div` attributes, plus:
 
 ---
 
-## 🎨 Styling
+## 🎨 Styling & Theming
+
+All Badge variants use semantic theme tokens that adapt to light/dark modes:
+
+- **default**: `bg-primary`, `text-primary-foreground`
+- **secondary**: `bg-secondary`, `text-secondary-foreground`
+- **destructive**: `bg-destructive`, `text-destructive-foreground`
+- **success**: `bg-success`, `text-success-foreground` — via `--success` CSS variable
+- **warning**: `bg-warning`, `text-warning-foreground` — via `--warning` CSS variable
+
+Override CSS variables to customize:
+
+```css
+:root {
+  --success: hsl(142 71% 45%);
+  --success-foreground: hsl(0 0% 100%);
+  --warning: hsl(48 96% 53%);
+  --warning-foreground: hsl(0 0% 100%);
+}
+```
 
 Customize badge appearance with Tailwind:
 

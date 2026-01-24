@@ -37,7 +37,7 @@ import { SideNav } from '@flavioespinoza/salsa-ui'
 
 ### Active State
 - Active menu items have white background and black text
-- Inactive items have gray text with pink hover effect
+- Inactive items use `text-muted-foreground` with `hover:bg-secondary/60` hover effect
 
 ### Tooltips
 - Only shown when sidebar is collapsed on tablet/desktop
@@ -200,7 +200,13 @@ interface SideNavStore {
 - Active State:
   - Uses `usePathname` from `next/navigation` to highlight current route
   - Active items have white background with black text
-  - Inactive items have gray text with pink hover effect
+  - Inactive items use `text-muted-foreground` with `hover:bg-secondary/60` hover effect
+
+- Theming:
+  - Sidebar background uses `--background-sidenav` CSS variable
+  - Header background uses `--sidenav-header` CSS variable
+  - Hover states use `--secondary` for consistent theme integration
+  - Override these variables to customize the sidebar appearance in light/dark modes
 
 - Transitions:
   - Smooth width transitions for expand/collapse

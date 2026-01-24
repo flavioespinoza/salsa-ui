@@ -1,16 +1,16 @@
 # Avatar
 
-The `Avatar` component displays user profile images with automatic fallback support. Built with Radix UI for accessibility and smooth image loading states.
+The `Avatar` component displays user profile images with automatic fallback support. Built as a custom React component with native `<img>` load/error detection and context-based state sharing.
 
 ---
 
 ## ✨ Features
 
-- Automatic fallback when image fails to load
-- Radix UI powered for accessibility
+- Native image load/error detection — fully testable in jsdom
+- Context-based state sharing between image and fallback
 - Customizable size with Tailwind classes
 - Supports initials, icons, or custom fallback content
-- Circular by default with smooth transitions
+- Circular by default with semantic theming via CSS variables
 
 ---
 
@@ -83,7 +83,7 @@ import { User } from 'lucide-react'
 
 ### Avatar
 
-Inherits all Radix UI Avatar.Root props, plus:
+Wraps children in a styled `<span>`. Accepts all HTML span attributes:
 
 | Prop       | Type   | Description                     |
 |------------|--------|---------------------------------|
@@ -91,7 +91,7 @@ Inherits all Radix UI Avatar.Root props, plus:
 
 ### AvatarImage
 
-Inherits all Radix UI Avatar.Image props:
+Renders a native `<img>`. Accepts all HTML img attributes:
 
 | Prop       | Type   | Description                     |
 |------------|--------|---------------------------------|
@@ -101,7 +101,7 @@ Inherits all Radix UI Avatar.Image props:
 
 ### AvatarFallback
 
-Inherits all Radix UI Avatar.Fallback props:
+Renders when the image hasn't loaded or failed. Accepts all HTML span attributes:
 
 | Prop       | Type      | Description                     |
 |------------|-----------|---------------------------------|
@@ -154,7 +154,7 @@ Inherits all Radix UI Avatar.Fallback props:
     <AvatarImage src="/avatar.jpg" />
     <AvatarFallback>JD</AvatarFallback>
   </Avatar>
-  <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 border-2 border-background" />
+  <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-success border-2 border-background" />
 </div>
 ```
 
@@ -175,6 +175,47 @@ Customize the avatar appearance:
 
 ---
 
+## 🎨 Theming
+
+The Avatar uses semantic color tokens that adapt to your theme:
+
+- **Fallback background**: `bg-muted` — adapts to both light and dark modes
+- **Border color** (in group layouts): `border-background` — matches the page background
+
+Override these CSS variables to customize:
+
+```css
+:root {
+  --muted: hsl(0 0% 96.1%);
+}
+.dark {
+  --muted: hsl(0 0% 14.9%);
+}
+```
+
+### Light/Dark Mode
+
+The fallback automatically adapts between light and dark modes:
+
+- **Light mode**: Fallback has a light gray background (`--muted`)
+- **Dark mode**: Fallback has a dark background, maintaining contrast for initials/icons
+
+```tsx
+{/* Works in both light and dark mode without overrides */}
+<Avatar>
+  <AvatarImage src="/avatar.jpg" alt="User" />
+  <AvatarFallback>JD</AvatarFallback>
+</Avatar>
+
+{/* Custom themed fallback */}
+<Avatar>
+  <AvatarImage src="/avatar.jpg" alt="User" />
+  <AvatarFallback className="bg-primary text-primary-foreground">JD</AvatarFallback>
+</Avatar>
+```
+
+---
+
 ## 🧪 Testing Tips
 
 - Test image loading and fallback behavior
@@ -186,5 +227,4 @@ Customize the avatar appearance:
 
 ## 🔗 Related
 
-- [Radix UI Avatar](https://www.radix-ui.com/docs/primitives/components/avatar)
 - [Badge](badge.md) - For status indicators

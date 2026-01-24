@@ -118,20 +118,52 @@ function FilteredChart() {
 
 ## Styling
 
-The component uses inline styles for tooltips and relies on D3 for chart rendering. To customize appearance:
+The component uses D3 for chart rendering and CSS variables for tooltip theming. To customize appearance:
 
 - Wrap in a styled container for layout control.
-- Modify D3 scales and colors within the component source if needed (e.g., change `d3.schemeCategory10`).
+- Data series colors use `d3.schemeCategory10` for distinct visual encoding of data categories.
 
 Example CSS for container:
 
 ```css
 .chart-container {
-  width: 100%
-  height: 300px
-  position: relative
+  width: 100%;
+  height: 300px;
+  position: relative;
 }
 ```
+
+---
+
+## 🎨 Theming
+
+The MorphingChart tooltip uses CSS variables for theme-aware styling:
+
+- **Tooltip background**: `var(--background)` — adapts to page background
+- **Tooltip border**: `var(--border)` — matches the theme's border color
+- **Tooltip shadow**: `var(--shadow, rgba(0,0,0,0.2))` — falls back to a subtle shadow if `--shadow` is not defined
+
+Override these CSS variables to customize tooltip appearance:
+
+```css
+:root {
+  --background: hsl(0 0% 100%);
+  --border: hsl(0 0% 89.8%);
+}
+.dark {
+  --background: hsl(0 0% 3.9%);
+  --border: hsl(0 0% 14.9%);
+}
+```
+
+### Light/Dark Mode
+
+The tooltip automatically adapts between light and dark modes via CSS variables:
+
+- **Light mode**: White background with light gray border
+- **Dark mode**: Dark background with dark border, maintaining readability
+
+Chart data series colors (`d3.schemeCategory10`) are intentionally not theme-dependent — they represent distinct data categories and remain consistent across modes for visual continuity.
 
 ## Notes
 
