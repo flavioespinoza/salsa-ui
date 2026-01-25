@@ -17,5 +17,5 @@ import { ButtonFluid } from '@flavioespinoza/salsa-ui'
 
 const handleClick = () => alert('Button Clicked!')
 
-<ButtonFluid className="bg-green-500 text-white" onClick={handleClick}>Click Me</ButtonFluid>
+<ButtonFluid className="bg-success text-success-foreground" onClick={handleClick}>Click Me</ButtonFluid>
 ```

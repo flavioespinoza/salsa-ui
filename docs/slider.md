@@ -198,7 +198,7 @@ Customize slider appearance:
 {/* Custom colors */}
 <Slider
   defaultValue={[50]}
-  className="[&>div]:bg-green-500"
+  className="[&>div]:bg-success"
 />
 
 {/* Larger thumb */}

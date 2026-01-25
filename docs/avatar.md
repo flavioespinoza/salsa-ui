@@ -154,7 +154,7 @@ Inherits all Radix UI Avatar.Fallback props:
     <AvatarImage src="/avatar.jpg" />
     <AvatarFallback>JD</AvatarFallback>
   </Avatar>
-  <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 border-2 border-background" />
+  <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-success border-2 border-background" />
 </div>
 ```
 

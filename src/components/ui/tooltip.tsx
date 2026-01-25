@@ -21,13 +21,13 @@ function Tooltip({
 				<TooltipPrimitive.Portal>
 					<TooltipPrimitive.Content
 						className={cn(
-							'z-50 overflow-hidden rounded-md bg-black px-2 py-1 text-xs text-white shadow-md'
+							'z-50 overflow-hidden rounded-md bg-foreground px-2 py-1 text-xs text-background shadow-md'
 						)}
 						sideOffset={4}
 						{...props}
 					>
 						{content}
-						<TooltipPrimitive.Arrow className="fill-black" />
+						<TooltipPrimitive.Arrow className="fill-foreground" />
 					</TooltipPrimitive.Content>
 				</TooltipPrimitive.Portal>
 			</TooltipPrimitive.Root>

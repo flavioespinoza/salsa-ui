@@ -70,7 +70,7 @@ import Link from 'next/link'
 You can override or extend styles using the `className` prop:
 
 ```tsx
-<Button className="bg-red-500 hover:bg-red-600">Custom</Button>
+<Button className="bg-destructive hover:bg-destructive/90">Custom</Button>
 ```
 
 ---
