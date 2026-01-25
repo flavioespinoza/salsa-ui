@@ -111,7 +111,30 @@ const config: Config = {
 					'3': 'var(--chart-3)',
 					'4': 'var(--chart-4)',
 					'5': 'var(--chart-5)'
-				}
+				},
+				success: {
+					DEFAULT: 'var(--success)',
+					foreground: 'var(--success-foreground)'
+				},
+				warning: {
+					DEFAULT: 'var(--warning)',
+					foreground: 'var(--warning-foreground)'
+				},
+				overlay: 'var(--overlay)',
+				tooltip: {
+					DEFAULT: 'var(--tooltip)',
+					foreground: 'var(--tooltip-foreground)'
+				},
+				sidenav: {
+					DEFAULT: 'var(--sidenav)',
+					header: 'var(--sidenav-header)',
+					'item-hover': 'var(--sidenav-item-hover)',
+					'item-active': 'var(--sidenav-item-active)',
+					'item-active-foreground': 'var(--sidenav-item-active-foreground)',
+					muted: 'var(--sidenav-muted)'
+				},
+				'input-background': 'var(--input-background)',
+				'card-outline': 'var(--card-outline)'
 			},
 			borderRadius: {
 				'60': '60px',

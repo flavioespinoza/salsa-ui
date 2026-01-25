@@ -29,11 +29,11 @@ describe('Badge', () => {
 
 	it('renders success variant', () => {
 		render(<Badge variant="success" data-testid="badge">Success</Badge>)
-		expect(screen.getByTestId('badge')).toHaveClass('bg-green-500')
+		expect(screen.getByTestId('badge')).toHaveClass('bg-success')
 	})
 
 	it('renders warning variant', () => {
 		render(<Badge variant="warning" data-testid="badge">Warning</Badge>)
-		expect(screen.getByTestId('badge')).toHaveClass('bg-yellow-500')
+		expect(screen.getByTestId('badge')).toHaveClass('bg-warning')
 	})
 })

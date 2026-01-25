@@ -199,14 +199,15 @@ function MorphingChart({
 			.append('div')
 			.attr('id', 'tooltip')
 			.style('position', 'absolute')
-			.style('background', '#fff')
-			.style('border', '1px solid #ccc')
+			.style('background', 'var(--card)')
+			.style('border', '1px solid var(--border)')
 			.style('padding', '10px')
 			.style('border-radius', '4px')
 			.style('font-size', '13px')
 			.style('pointer-events', 'none')
 			.style('opacity', 0)
 			.style('box-shadow', '0 2px 6px rgba(0,0,0,0.2)')
+			.style('color', 'var(--card-foreground)')
 
 		const barsGroup = g.append('g')
 
