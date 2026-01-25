@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { Palette } from 'lucide-react'
 import {
 	AirdropsIcon,
 	DocumentationIcon,
@@ -22,6 +23,11 @@ const menuItems = [
 		label: 'Home',
 		path: '/',
 		icon: (isActive: boolean) => <HomeIcon className={iconClasses(isActive)} />
+	},
+	{
+		label: 'Playground',
+		path: '/playground',
+		icon: (isActive: boolean) => <Palette className={iconClasses(isActive)} />
 	},
 	{
 		label: 'Bar Chart',

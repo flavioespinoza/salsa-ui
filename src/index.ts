@@ -54,6 +54,8 @@ export * from './components/ui/toaster'
 export * from './components/ui/toggle'
 export * from './components/ui/toggle-group'
 export * from './components/ui/tooltip'
+export * from './components/ui/theme-toggle'
+export * from './components/theme-provider'
 
 // Hooks
 export * from './hooks/use-copy-to-clipboard'
