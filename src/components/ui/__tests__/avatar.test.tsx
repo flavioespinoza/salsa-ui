@@ -1,15 +1,17 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { Avatar, AvatarImage, AvatarFallback } from '../avatar'
 
 describe('Avatar', () => {
-	it('renders avatar with image', () => {
+	it('renders avatar with image', async () => {
 		render(
 			<Avatar>
 				<AvatarImage src="/avatar.jpg" alt="User" />
 				<AvatarFallback>UN</AvatarFallback>
 			</Avatar>
 		)
-		expect(screen.getByAltText('User')).toBeInTheDocument()
+		await waitFor(() => {
+			expect(screen.getByAltText('User')).toBeInTheDocument()
+		})
 	})
 
 	it('renders fallback when image fails', () => {

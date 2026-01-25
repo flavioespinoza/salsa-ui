@@ -30,7 +30,7 @@ describe('Alert', () => {
 			</Alert>
 		)
 		const alert = screen.getByTestId('alert')
-		expect(alert).toHaveClass('border-green-500/50')
+		expect(alert).toHaveClass('border-success/50')
 	})
 
 	it('renders warning variant', () => {
@@ -40,6 +40,6 @@ describe('Alert', () => {
 			</Alert>
 		)
 		const alert = screen.getByTestId('alert')
-		expect(alert).toHaveClass('border-yellow-500/50')
+		expect(alert).toHaveClass('border-warning/50')
 	})
 })

@@ -196,7 +196,7 @@ Customize switch appearance:
 
 ```tsx
 {/* Custom colors */}
-<Switch className="data-[state=checked]:bg-green-500" />
+<Switch className="data-[state=checked]:bg-success" />
 
 {/* Larger switch */}
 <Switch className="h-6 w-11" />

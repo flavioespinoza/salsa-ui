@@ -57,9 +57,9 @@ import { Progress } from '@flavioespinoza/salsa-ui'
 ### Custom Colors
 
 ```tsx
-<Progress value={60} className="[&>div]:bg-green-500" />
-<Progress value={30} className="[&>div]:bg-yellow-500" />
-<Progress value={90} className="[&>div]:bg-blue-500" />
+<Progress value={60} className="[&>div]:bg-success" />
+<Progress value={30} className="[&>div]:bg-warning" />
+<Progress value={90} className="[&>div]:bg-primary" />
 ```
 
 ---

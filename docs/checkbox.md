@@ -72,14 +72,14 @@ export default function ControlledCheckbox() {
 The checkbox uses Tailwind utility classes with a default theme:
 
 - `border-primary`
-- `bg-sage-200`
-- `data-[state=checked]:bg-hotpink-500`
-- `data-[state=checked]:text-white`
+- `bg-muted`
+- `data-[state=checked]:bg-secondary`
+- `data-[state=checked]:text-secondary-foreground`
 
 You can override these with the `className` prop:
 
 ```tsx
-<Checkbox className="border-red-500 data-[state=checked]:bg-red-500" />
+<Checkbox className="border-destructive data-[state=checked]:bg-destructive" />
 ```
 
 ---

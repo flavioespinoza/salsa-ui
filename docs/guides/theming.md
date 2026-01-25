@@ -4,31 +4,63 @@ Customize the look and feel of Salsa UI components.
 
 ## Color Tokens
 
-Salsa UI uses CSS custom properties for theming:
+Salsa UI uses CSS custom properties for theming. All components use semantic tokens that automatically adapt to light and dark modes:
 
 ```css
 :root {
-	--background: 0 0% 100%;
-	--foreground: 222.2 84% 4.9%;
-	--primary: 222.2 47.4% 11.2%;
-	--primary-foreground: 210 40% 98%;
-	--secondary: 210 40% 96.1%;
-	--secondary-foreground: 222.2 47.4% 11.2%;
-	--muted: 210 40% 96.1%;
-	--muted-foreground: 215.4 16.3% 46.9%;
-	--accent: 210 40% 96.1%;
-	--accent-foreground: 222.2 47.4% 11.2%;
-	--destructive: 0 84.2% 60.2%;
-	--destructive-foreground: 210 40% 98%;
-	--border: 214.3 31.8% 91.4%;
-	--input: 214.3 31.8% 91.4%;
-	--ring: 222.2 84% 4.9%;
+	/* Core */
+	--background: hsl(0 0% 98%);
+	--foreground: hsl(0 0% 3.9%);
+
+	/* Cards & Popovers */
+	--card: hsl(0 0% 100%);
+	--card-foreground: hsl(0 0% 3.9%);
+
+	/* Primary & Secondary */
+	--primary: var(--sage-500);
+	--primary-foreground: hsl(0 0% 98%);
+	--secondary: var(--hotpink-500);
+	--secondary-foreground: hsl(0 0% 100%);
+
+	/* Muted & Accent */
+	--muted: hsl(0 0% 96.1%);
+	--muted-foreground: hsl(0 0% 45.1%);
+	--accent: hsl(0 0% 96.1%);
+	--accent-foreground: hsl(0 0% 9%);
+
+	/* Semantic States */
+	--destructive: var(--hotpink-700);
+	--destructive-foreground: hsl(0 0% 98%);
+	--success: hsl(142 71% 45%);
+	--success-foreground: hsl(0 0% 100%);
+	--warning: hsl(45 93% 47%);
+	--warning-foreground: hsl(0 0% 0%);
+
+	/* UI Elements */
+	--border: hsl(0 0% 89.8%);
+	--input: hsl(0 0% 89.8%);
+	--ring: var(--hotpink-500);
+	--overlay: hsla(0 0% 0% / 0.8);
+
+	/* Sidenav */
+	--sidenav: var(--sage-100);
+	--sidenav-header: hsl(0 0% 83%);
 }
 
 .dark {
-	--background: 222.2 84% 4.9%;
-	--foreground: 210 40% 98%;
-	/* ... */
+	--background: hsl(0 0% 3.9%);
+	--foreground: hsl(0 0% 98%);
+	--card: hsl(0 0% 3.9%);
+	--card-foreground: hsl(0 0% 98%);
+	--primary: hsl(0 0% 98%);
+	--primary-foreground: hsl(0 0% 9%);
+	--secondary: hsl(0 0% 14.9%);
+	--secondary-foreground: hsl(0 0% 98%);
+	--muted: hsl(0 0% 14.9%);
+	--muted-foreground: hsl(0 0% 63.9%);
+	--sidenav: hsl(0 0% 14.9%);
+	--sidenav-header: hsl(0 0% 20%);
+	/* success, warning, overlay remain the same */
 }
 ```
 

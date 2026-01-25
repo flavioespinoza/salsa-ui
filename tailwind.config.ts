@@ -102,6 +102,19 @@ const config: Config = {
 					DEFAULT: 'var(--destructive)',
 					foreground: 'var(--destructive-foreground)'
 				},
+				success: {
+					DEFAULT: 'var(--success)',
+					foreground: 'var(--success-foreground)'
+				},
+				warning: {
+					DEFAULT: 'var(--warning)',
+					foreground: 'var(--warning-foreground)'
+				},
+				sidenav: {
+					DEFAULT: 'var(--sidenav)',
+					header: 'var(--sidenav-header)'
+				},
+				overlay: 'var(--overlay)',
 				border: 'var(--border)',
 				input: 'var(--input)',
 				ring: 'var(--ring)',
