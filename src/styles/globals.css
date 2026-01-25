@@ -4,7 +4,7 @@
 
 body {
 	font-family: var(--font-inter), sans-serif;
-	@apply text-black;
+	@apply text-foreground;
 }
 
 @layer utilities {
@@ -74,6 +74,35 @@ body {
 		--chart-4: hsl(43 74% 66%); /* #f4a261 */
 		--chart-5: hsl(27 87% 67%); /* #e9c46a */
 		--radius: 0.5rem;
+
+		/* Success state colors */
+		--success: hsl(142 71% 45%); /* #22c55e - green-500 */
+		--success-foreground: hsl(0 0% 100%); /* #ffffff */
+
+		/* Warning state colors */
+		--warning: hsl(45 93% 47%); /* #eab308 - yellow-500 */
+		--warning-foreground: hsl(0 0% 100%); /* #ffffff */
+
+		/* Overlay for modals/dialogs */
+		--overlay: hsl(0 0% 0% / 0.8); /* black with 80% opacity */
+
+		/* Tooltip colors */
+		--tooltip: hsl(0 0% 0%); /* #000000 */
+		--tooltip-foreground: hsl(0 0% 100%); /* #ffffff */
+
+		/* Sidenav colors */
+		--sidenav: var(--sage-100);
+		--sidenav-header: hsl(0 0% 83%); /* #d4d4d4 - gray-300 */
+		--sidenav-item-hover: hsl(350 99% 60% / 0.6); /* hotpink-500/60 */
+		--sidenav-item-active: hsl(0 0% 100%); /* white */
+		--sidenav-item-active-foreground: hsl(0 0% 0%); /* black */
+		--sidenav-muted: hsl(240 4% 46%); /* zinc-500 */
+
+		/* Input background */
+		--input-background: var(--sage-200);
+
+		/* Card outline color */
+		--card-outline: hsl(0 0% 9% / 0.05); /* stone-950/5 */
 	}
 	.dark {
 		--background: hsl(0 0% 3.9%); /* #0a0a0a */
@@ -100,6 +129,35 @@ body {
 		--chart-3: hsl(30 80% 55%); /* #f59e0b */
 		--chart-4: hsl(280 65% 60%); /* #a855f7 */
 		--chart-5: hsl(340 75% 55%); /* #ec4899 */
+
+		/* Success state colors - dark mode */
+		--success: hsl(142 71% 45%); /* #22c55e - green-500 */
+		--success-foreground: hsl(0 0% 100%); /* #ffffff */
+
+		/* Warning state colors - dark mode */
+		--warning: hsl(45 93% 47%); /* #eab308 - yellow-500 */
+		--warning-foreground: hsl(0 0% 100%); /* #ffffff */
+
+		/* Overlay for modals/dialogs - dark mode */
+		--overlay: hsl(0 0% 0% / 0.8); /* black with 80% opacity */
+
+		/* Tooltip colors - dark mode (inverted) */
+		--tooltip: hsl(0 0% 98%); /* #fafafa - light for dark mode */
+		--tooltip-foreground: hsl(0 0% 9%); /* #171717 - dark text */
+
+		/* Sidenav colors - dark mode */
+		--sidenav: hsl(0 0% 9%); /* #171717 */
+		--sidenav-header: hsl(0 0% 14.9%); /* #262626 */
+		--sidenav-item-hover: hsl(0 0% 20%); /* slightly lighter */
+		--sidenav-item-active: hsl(0 0% 20%); /* slightly lighter */
+		--sidenav-item-active-foreground: hsl(0 0% 98%); /* #fafafa */
+		--sidenav-muted: hsl(0 0% 63.9%); /* #a3a3a3 */
+
+		/* Input background - dark mode */
+		--input-background: hsl(0 0% 14.9%); /* #262626 */
+
+		/* Card outline color - dark mode */
+		--card-outline: hsl(0 0% 98% / 0.05); /* light outline for dark mode */
 	}
 }
 

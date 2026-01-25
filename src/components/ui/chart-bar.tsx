@@ -22,11 +22,11 @@ const chartData = [
 	{ day: '2025-03-16', 'Referral Time': 260, 'Bonus Time': 210, 'Base Time': 140 }
 ]
 
-// Chart Configuration
+// Chart Configuration - using CSS variables for theming
 const chartConfig = {
-	'Referral Time': { color: '#FFFFFF' }, // White
-	'Bonus Time': { color: '#16463d' }, // Greenish
-	'Base Time': { color: '#8dd081' } // Light Green
+	'Referral Time': { color: 'var(--chart-1)' },
+	'Bonus Time': { color: 'var(--chart-2)' },
+	'Base Time': { color: 'var(--chart-3)' }
 }
 
 const ChartBar: React.FC = () => {
@@ -39,9 +39,9 @@ const ChartBar: React.FC = () => {
 						<YAxis />
 						<Tooltip />
 						<Legend />
-						<Bar dataKey="Base Time" stackId="a" fill="#8dd081" />
-						<Bar dataKey="Bonus Time" stackId="a" fill="#16463d" />
-						<Bar dataKey="Referral Time" stackId="a" fill="#FFFFFF" />
+						<Bar dataKey="Base Time" stackId="a" fill="var(--chart-3)" />
+						<Bar dataKey="Bonus Time" stackId="a" fill="var(--chart-2)" />
+						<Bar dataKey="Referral Time" stackId="a" fill="var(--chart-1)" />
 					</BarChart>
 				</ResponsiveContainer>
 			</ChartContainer>
