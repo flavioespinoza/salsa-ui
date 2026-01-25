@@ -24,9 +24,9 @@ const chartData = [
 
 // Chart Configuration
 const chartConfig = {
-	'Referral Time': { color: '#FFFFFF' }, // White
-	'Bonus Time': { color: '#16463d' }, // Greenish
-	'Base Time': { color: '#8dd081' } // Light Green
+	'Referral Time': { color: 'var(--chart-3)' },
+	'Bonus Time': { color: 'var(--chart-2)' },
+	'Base Time': { color: 'var(--chart-1)' }
 }
 
 const ChartBar: React.FC = () => {
@@ -39,9 +39,9 @@ const ChartBar: React.FC = () => {
 						<YAxis />
 						<Tooltip />
 						<Legend />
-						<Bar dataKey="Base Time" stackId="a" fill="#8dd081" />
-						<Bar dataKey="Bonus Time" stackId="a" fill="#16463d" />
-						<Bar dataKey="Referral Time" stackId="a" fill="#FFFFFF" />
+						<Bar dataKey="Base Time" stackId="a" fill="var(--chart-1)" />
+						<Bar dataKey="Bonus Time" stackId="a" fill="var(--chart-2)" />
+						<Bar dataKey="Referral Time" stackId="a" fill="var(--chart-3)" />
 					</BarChart>
 				</ResponsiveContainer>
 			</ChartContainer>
