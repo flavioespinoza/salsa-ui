@@ -102,6 +102,20 @@ const config: Config = {
 					DEFAULT: 'var(--destructive)',
 					foreground: 'var(--destructive-foreground)'
 				},
+				success: {
+					DEFAULT: 'var(--success)',
+					foreground: 'var(--success-foreground)'
+				},
+				warning: {
+					DEFAULT: 'var(--warning)',
+					foreground: 'var(--warning-foreground)'
+				},
+				overlay: 'var(--overlay)',
+				tooltip: {
+					DEFAULT: 'var(--tooltip)',
+					foreground: 'var(--tooltip-foreground)'
+				},
+				'sidebar-header': 'var(--sidebar-header)',
 				border: 'var(--border)',
 				input: 'var(--input)',
 				ring: 'var(--ring)',
